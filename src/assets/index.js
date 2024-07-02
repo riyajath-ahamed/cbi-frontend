@@ -1,0 +1,1 @@
+export {default as BrandLogoOriginal} from './BrandLogoOriginal.png';
