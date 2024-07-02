@@ -1,5 +1,5 @@
 *{
-    font-family: "Circular Std";
+    /* font-family: "Circular Std"; */
 }
 
 .navbar {
@@ -23,6 +23,7 @@
     height: 25px;
     background-color: rgb(255, 255, 255);
     border-bottom: 1px rgb(213, 213, 213) solid;
+    margin : 10px 0 10px 0;
 }
 
 .bottom-navbar {
