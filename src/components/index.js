@@ -4,3 +4,4 @@
 // and if the component have css file then we can save the css file inside the components folder .
 
 export {default as NavigationBar} from './navbar/NavigationBar.js';
+export {default as Whatwedo} from './whatwedo/whatwedo.jsx';
