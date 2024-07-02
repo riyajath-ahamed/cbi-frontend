@@ -1,6 +1,6 @@
 import React from 'react';
 import './NavigationBar.css';
-import logo from './assets/BrandLogoOriginal.png'; 
+import { BrandLogoOriginal } from '../../assets';
 
 const NavigationBar = () => {
   return (
@@ -16,7 +16,7 @@ const NavigationBar = () => {
       </div>
       <div className="bottom-navbar">
         <div className="logo">
-          <img src={logo} alt="Logo" />
+          <img src={BrandLogoOriginal} alt="Logo" />
         </div>
         <div className="bottom-links">
             <div className='who-we-are'>
