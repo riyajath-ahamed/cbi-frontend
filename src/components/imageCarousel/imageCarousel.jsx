@@ -3,6 +3,10 @@ import { HeroImage1, HeroImage2, HeroImage3 } from '../../assets'
 import { Carousel } from 'react-responsive-carousel'
 import "./imageCarousel.css";
 
+// TODO :  - Add read more button
+//         - add scroll down button
+
+
 const ImageCarousel = () => {
   return (
     <div>
