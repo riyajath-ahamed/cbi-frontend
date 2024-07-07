@@ -1,15 +1,19 @@
 import React from 'react';
-import './App.css';
-import ImageChanger from './ImageChanger';
+import { NavigationBar, Whatwedo } from './components';
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <ImageChanger />
-      </header>
+      <NavigationBar />
+
+      {/* Carousel goes here */}
+    <div className="bg-white py-24 sm:py-32">
+      <Whatwedo />
+      
+      </div>
     </div>
   );
 }
 
 export default App;
+
