@@ -20,15 +20,15 @@ const ImageCarousel = () => {
         dynamicHeight={true}
       >
                 <div>
-                    <img src={HeroImage1} />
+                    <img src={HeroImage1} alt='Hero-image' />
                     <p className="legend">#helpChildren</p>
                 </div>
                 <div>
-                    <img src={HeroImage2}  />
+                    <img src={HeroImage2} alt='Hero-image' />
                     <p className="legend">#socialJustice</p>
                 </div>
                 <div>
-                    <img src={HeroImage3}  />
+                    <img src={HeroImage3} alt='Hero-image' />
                     <p className="legend">#forGreateFuture</p>
                 </div>
             </Carousel>

@@ -33,7 +33,7 @@ const NavigationBar = () => {
             <a href="/our-impact" className="ml-7 text-gray-800 no-underline hover:text-green-500 transition-all duration-400">Our Impact</a>
           </div>
         </div>
-        <button className="bg-green-500 text-white border-none px-8 py-2 ml-5 cursor-pointer rounded transition-all duration-200 hover:text-green-700 hover:bg-white hover:border-2 hover:border-green-700">
+        <button className="bg-green-500 border-green-500 text-white border-2 px-8 py-2 ml-5 cursor-pointer rounded-md transition-all duration-200 hover:text-green-700 hover:bg-white hover:border-2 hover:border-green-700">
           Donate
         </button>
       </div>
