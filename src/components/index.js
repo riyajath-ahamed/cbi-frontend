@@ -9,3 +9,5 @@ export {default as ImageCarousel} from './imageCarousel/imageCarousel.jsx';
 export {default as Whoarewe} from './whoarewe/whoarewe.jsx';
 export {default as MissionCard} from './missionCard/missionCard.jsx';
 export {default as OurImpact} from './ourImpact/ourImpact.jsx';
+export {default as QuotesSlider} from './quotesSlider/quoteSlider.jsx';
+export {default as Footer} from './footer/footer.jsx';
