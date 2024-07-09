@@ -8,3 +8,4 @@ export {default as Whatwedo} from './whatwedo/whatwedo.jsx';
 export {default as ImageCarousel} from './imageCarousel/imageCarousel.jsx';
 export {default as Whoarewe} from './whoarewe/whoarewe.jsx';
 export {default as MissionCard} from './missionCard/missionCard.jsx';
+export {default as OurImpact} from './ourImpact/ourImpact.jsx';
