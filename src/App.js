@@ -1,5 +1,5 @@
 import React from 'react';
-import {ImageCarousel, NavigationBar, Whatwedo, Whoarewe } from './components';
+import {ImageCarousel,  MissionCard,  NavigationBar, Whatwedo, Whoarewe } from './components';
 
 function App() {
   return (
@@ -9,10 +9,11 @@ function App() {
       <Whoarewe />
 
       {/* Carousel goes here */}
-    <div className="bg-white py-24 sm:py-32">
+
       <Whatwedo />
+      <MissionCard />
       
-      </div>
+
     </div>
   );
 }
