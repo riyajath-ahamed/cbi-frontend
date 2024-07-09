@@ -1,5 +1,5 @@
 import React from 'react';
-import {ImageCarousel,  MissionCard,  NavigationBar, Whatwedo, Whoarewe } from './components';
+import {ImageCarousel,  MissionCard,  NavigationBar, OurImpact, Whatwedo, Whoarewe } from './components';
 
 function App() {
   return (
@@ -12,6 +12,7 @@ function App() {
 
       <Whatwedo />
       <MissionCard />
+      <OurImpact />
       
 
     </div>
