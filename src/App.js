@@ -1,5 +1,5 @@
 import React from 'react';
-import {Footer, ImageCarousel,  MissionCard,  NavigationBar, OurImpact, QuotesSlider, Whatwedo, Whoarewe } from './components';
+import {Blog, Footer, Gallery, ImageCarousel,  MissionCard,  NavigationBar, OurImpact, Project, QuotesSlider, Whatwedo, WhereWeWork, Whoarewe } from './components';
 
 function App() {
   return (
@@ -14,6 +14,14 @@ function App() {
       <MissionCard />
       <OurImpact />
       <QuotesSlider />
+
+      <Project />
+
+      <WhereWeWork />
+        
+      <Blog />
+      <Gallery />
+      
       <Footer />
       
 
