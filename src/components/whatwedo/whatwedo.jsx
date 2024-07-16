@@ -42,7 +42,7 @@ const features = [
 
 const  Whatwedo = () => {
   return (
-    <div className="bgcard py-14 sm:py-20">
+    <div id="whatwedo" className="bgcard py-14 sm:py-20">
       <div className="mx-auto max-w-7xl px-6 lg:px-8">
         <div className="mx-auto max-w-2xl lg:text-center">
           <p className="mt-2 text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">
@@ -60,15 +60,15 @@ const  Whatwedo = () => {
                   {feature.name}
                 </dt>
                 <dd className="mt-2 text-sm leading-7 text-center text-gray-600 mb-6">{feature.description}</dd>
-                <div className=" text-primary font-semibold hover:cursor-pointer hover:text-green-700 transition-all duration-400">
+                <div className=" text-primary font-medium hover:bg-gray-200 py-2 px-6 rounded-md hover:cursor-pointer  transition-all duration-400">
                     Read More <span className="inline-block"> <FaAngleDown /> </span> 
                 </div>
               </div>
             ))}
           </dl>
         </div>
-        <div className="mt-16 text-center ">
-            <a href="/what-we-do" className="text-gray-600 font-semibold hover:cursor-pointer hover:text-green-700 transition-all duration-400">
+        <div className="mt-16 text-center  ">
+            <a href="/what-we-do" className="text-gray-600 font-semibold hover:cursor-pointer  hover:text-green-700 transition-all duration-400">
             Explore more 
             <span className="inline-block"><IoIosArrowRoundForward /></span>
             
