@@ -17,3 +17,4 @@ export {default as Gallery} from './gallery/gallery.jsx';
 export {default as Footer} from './footer/footer.jsx';
 export {default as DonatePage} from './donateUs/donateNow.js';
 export {default as AboutUs} from './aboutUsPage/AboutUsPage.js';
+export {default as ContactUs} from './contactUs/contactUs.js';

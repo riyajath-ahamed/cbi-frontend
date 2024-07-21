@@ -1,5 +1,5 @@
 import React from 'react';
-import {AboutUs, Blog, DonatePage, Footer, Gallery, ImageCarousel,  MissionCard,  NavigationBar, OurImpact, Project, QuotesSlider, Whatwedo, WhereWeWork, Whoarewe } from './components';
+import {AboutUs, Blog, ContactUs, DonatePage, Footer, Gallery, ImageCarousel,  MissionCard,  NavigationBar, OurImpact, Project, QuotesSlider, Whatwedo, WhereWeWork, Whoarewe } from './components';
 
 import './App.css';
 
@@ -29,6 +29,7 @@ function App() {
 
       {/* <DonatePage /> */}
       {/* <AboutUs /> */}
+      {/* <ContactUs /> */}
     </div>
   );
 }
