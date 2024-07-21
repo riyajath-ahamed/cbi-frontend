@@ -7,7 +7,7 @@ const AboutUs = () => {
                 <div className="max-w-7xl mx-auto lg:px-24 px-8">
                     <h1 className="text-4xl font-bold text-center mb-[8px]">About Us</h1>
                     <p className="text-center text-[#464646] text-[18px] leading-loose">Let's know who we are and what are we doing</p>
-                    <div className="mt-8 text-[#424242] mt-[70px] mb-[50px]">
+                    <div className="mt-8 text-[#424242] mb-[50px]">
                         <p className="text-lg mb-[40px] leading-loose">We are an Australian <span className="underline underline-offset-8">registered</span> public guaranteed company working towards education, health, economic & skill development.</p>
                         <div className="lg:flex xl:flex mt-4 mb-[25px]">
                             <p className="text-[17px] leading-loose">Beyond Childhood International is a <span className="underline underline-offset-8">non-partisan</span> development organisation dedicated to work with children, youth families, and communities to overcome challenges like reduced parental care, economic stress and vulnerabilities, social norms and attitudes, and skill gaps to meet the demands of the national and international labor market. <br/><br/>
