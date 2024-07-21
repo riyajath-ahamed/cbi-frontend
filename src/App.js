@@ -1,5 +1,7 @@
 import React from 'react';
-import {Blog, Footer, Gallery, ImageCarousel,  MissionCard,  NavigationBar, OurImpact, Project, QuotesSlider, Whatwedo, WhereWeWork, Whoarewe } from './components';
+import {Blog, DonatePage, Footer, Gallery, ImageCarousel,  MissionCard,  NavigationBar, OurImpact, Project, QuotesSlider, Whatwedo, WhereWeWork, Whoarewe } from './components';
+
+import './App.css';
 
 function App() {
   return (
@@ -25,9 +27,9 @@ function App() {
       <Footer />
       
 
+      {/* <DonatePage /> */}
     </div>
   );
 }
 
 export default App;
-
