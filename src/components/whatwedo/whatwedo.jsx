@@ -55,7 +55,7 @@ const  Whatwedo = () => {
         <div className="mx-auto mt-16 max-w-2xl sm:mt-20 lg:mt-24 lg:max-w-4xl">
           <dl className="grid max-w-xl grid-cols-1 gap-x-8 gap-y-8 lg:max-w-none lg:grid-cols-3 lg:gap-y-16">
             {features.map((feature) => (
-              <div key={feature.name} className="relative bg-card-bg rounded-md border-2 border-slate-400 py-5 px-4 flex flex-col items-center">
+              <div key={feature.name} className=" bg-card-bg rounded-md border-2 border-slate-400 py-5 px-4 flex flex-col justify-between  items-center">
                 <dt className="text-base font-semibold leading-7 text-gray-900">
                   {feature.name}
                 </dt>

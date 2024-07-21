@@ -43,7 +43,7 @@ const WhereWeWork = () => {
   //       Center the globe 
 
   return (
-    <div className='max-w-[90rem] w-full mx-auto flex flex-1 items-center justify-center' style={{ height: '100vh' }}>
+    <div id='wherewework' className='max-w-[90rem] w-full mx-auto flex flex-1 items-center justify-center' style={{ height: '100vh' }}>
       <div className='py-10 flex-col pb-8 w-full justify-center max-w-full flex min-w-0'>
         <div className="mx-auto max-w-2xl lg:text-center">
           <p className="mt-2 text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">

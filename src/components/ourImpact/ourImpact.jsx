@@ -14,7 +14,7 @@ const stats = [
 
 const OurImpact = () => {
   return (
-    <div>
+    <div id='ourimpact'>
         <div className='text-center'>
             <h1 className='text-3xl font-bold'>Our Impact</h1>
             <p className='text-lg text-gray-600'>

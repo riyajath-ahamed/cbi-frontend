@@ -1,18 +1,18 @@
 import React from 'react';
+import { FaLocationDot } from "react-icons/fa6";
+import { FaPhoneAlt } from "react-icons/fa";
+import { MdEmail } from "react-icons/md";
+
 import './contactUs.css';
 
 const ContactUs = () => {
   return (
     <div className="p-8 mt-[50px]">
-      <div className='Header'>
-      <div className='heading'> 
-      </div>
       <h1 className="text-4xl font-semibold text-center mb-3">Get In Touch</h1>
       <h4 className="text-center text-gray-600 mb-[100px] text-[18px]">Reach out to us for any inquiries, support, or feedback.</h4>
-      </div>
       <div className="grid grid-cols-1 md:grid-cols-3 gap-8 text-center mt-15 mb-[60px]">
         <div>
-            <img src="/images/AddressIcon.png" alt="Location Icon" className="mx-auto mb-4 w-24 h-24 mb-[30px] transform transition-transform duration-300 hover:scale-[1.1]" />
+            <FaLocationDot className=" mx-auto mb-4 bg-primary p-5 rounded-full text-white w-24 h-24 transform transition-transform duration-300 hover:scale-[1.1]" />
           <h2 className="text-xl font-medium mb-[9px] text-[25px]">Address</h2>
           <p className="font-semiboldfont-575757 text-[#363636] text-[19px]">Australia</p>
           <p className="font-medium text-[#8A8A8A] mb-[26px]  text-[16px]">Melbourne, Victoria, <br></br>Australia.</p>
@@ -20,7 +20,7 @@ const ContactUs = () => {
           <p className="font-medium text-[#8A8A8A]  text-[16px] mb-[20px]">Colombo, Western Province, <br></br>Sri Lanka.</p>
         </div>
         <div>
-        <img src="/images/CallIcon.png" alt="Location Icon" className="mx-auto mb-4 w-24 h-24 mb-[30px] transform transition-transform duration-300 hover:scale-[1.1]" />
+        <FaPhoneAlt className=" mx-auto mb-4 bg-primary p-5 rounded-full text-white w-24 h-24 transform transition-transform duration-300 hover:scale-[1.1]" />
         <h2 className="text-xl font-medium mb-[9px] text-[25px]">Phone</h2>
         <p className="font-semiboldfont-575757 text-[#363636] text-[19px]">Australia</p>
           <p className="font-roboto font-semibold text-[#8A8A8A] mb-[46px]  text-[15px]">+61 491 570 006</p>
@@ -28,7 +28,7 @@ const ContactUs = () => {
           <p className="font-roboto font-semibold text-[#8A8A8A] mb-[26px]  text-[15px] font-Inter">+94 12 34 567 89</p>
         </div>
         <div>
-        <img src="/images/EmailIcon.png" alt="Location Icon" className="mx-auto mb-4 w-24 h-24 mb-[30px] transform transition-transform duration-300 hover:scale-[1.1]" />
+        <MdEmail className=" mx-auto mb-4 bg-primary p-5 rounded-full text-white w-24 h-24 transform transition-transform duration-300 hover:scale-[1.1]" />
           <h2 className="text-xl font-medium mb-[9px] text-[25px]">Email</h2>
           <p className="font-semiboldfont-575757 text-[#363636] text-[19px]">For Donations</p>
           <p className="font-medium text-[#8A8A8A] mb-[46px]  text-[16px]">sampleemail@gmail.com</p>
