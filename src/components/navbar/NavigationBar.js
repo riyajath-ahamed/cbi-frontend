@@ -21,13 +21,13 @@ const NavigationBar = () => {
         <div className="flex justify-between items-center pl-5 pr-9 py-2">
         <div className="flex items-center">
           <div className='who-we-are'>
-            <a href="/who-we-are" className="ml-7 text-gray-800 no-underline hover:text-green-500 transition-all duration-400">Who We Are</a>
+            <a href="#who-we-are" className="ml-7 text-gray-800 no-underline hover:text-green-500 transition-all duration-400">Who We Are</a>
           </div>
           <div className='where-we-work'>
             <a href="/where-we-work" className="ml-7 text-gray-800 no-underline hover:text-green-500 transition-all duration-400">Where We Work</a>
           </div>
           <div className='what-we-do'>
-            <a href="/what-we-do" className="ml-7 text-gray-800 no-underline hover:text-green-500 transition-all duration-400">What We Do</a>
+            <a href="#whatwedo" className="ml-7 text-gray-800 no-underline hover:text-green-500 transition-all duration-400">What We Do</a>
           </div>
           <div className='our-impact'>
             <a href="/our-impact" className="ml-7 text-gray-800 no-underline hover:text-green-500 transition-all duration-400">Our Impact</a>
