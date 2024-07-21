@@ -8,9 +8,9 @@ const Whoarewe = () => {
       <div className="mx-auto max-w-7xl px-6 lg:px-8">
         <div className="text-center mb-6">
         <p className="mt-2 text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">Who are we</p>
-              <p className="mt-6 text-lg leading-8 text-gray-600">
-              We are an Australian registered public guaranteed company working towards education, health, economic & skill development.
-              </p>  
+        <p className="mt-6 text-lg leading-8 text-gray-600">
+          We are an Australian registered public guaranteed company working towards education, health, economic & skill development.
+        </p>  
         </div>
       
         <div className="mx-auto grid max-w-2xl grid-cols-1 gap-x-8 gap-y-16 sm:gap-y-20 lg:mx-0 lg:max-w-none lg:grid-cols-2 text-justify lg:text-left">

@@ -1,11 +1,34 @@
 import React from 'react';
-import './index.css';
-import ContactUs from './components/contactUs/contactUs';
+import {AboutUs, Blog, DonatePage, Footer, Gallery, ImageCarousel,  MissionCard,  NavigationBar, OurImpact, Project, QuotesSlider, Whatwedo, WhereWeWork, Whoarewe } from './components';
+
+import './App.css';
 
 function App() {
   return (
-    <div>
-      <ContactUs />
+    <div className="App">
+      <NavigationBar />
+      <ImageCarousel />
+      <Whoarewe />
+
+      {/* Carousel goes here */}
+
+      <Whatwedo />
+      <MissionCard />
+      <OurImpact />
+      <QuotesSlider />
+
+      <Project />
+
+      <WhereWeWork />
+        
+      <Blog />
+      <Gallery />
+      
+      <Footer />
+      
+
+      {/* <DonatePage /> */}
+      {/* <AboutUs /> */}
     </div>
   );
 }
