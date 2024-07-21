@@ -3,6 +3,10 @@
 // Lets Broke the components into smaller parts and export them.
 // and if the component have css file then we can save the css file inside the components folder .
 
+export {default as Home} from './home/home.jsx';
+export {default as BlogHome} from './blog/home.jsx';
+export {default as ProjectHome} from './projects/ProjectHome/projectHome.jsx';
+
 export {default as NavigationBar} from './navbar/NavigationBar.js';
 export {default as Whatwedo} from './whatwedo/whatwedo.jsx';
 export {default as ImageCarousel} from './imageCarousel/imageCarousel.jsx';

@@ -1,8 +1,10 @@
 import React from 'react'
-import Publication from './articles'
+import { RecentPublication } from './articles'
 import { IoIosArrowRoundForward } from "react-icons/io";
+import { useNavigate  } from 'react-router-dom';
 
 const Blog = () => {
+  const navigate = useNavigate();
   return (
     <div id="project" className="bgcard py-14 sm:py-20">
       <div className="mx-auto max-w-full px-6 lg:px-8">
@@ -13,14 +15,22 @@ const Blog = () => {
           <p className="mt-6 text-lg leading-8 text-gray-600">
             Read our latest articles from Here
           </p>
-          <p onClick=""  className="text-lg leading-8 text-gray-600 text-right hover:cursor-pointer">
-          View All <span className="inline-block"><IoIosArrowRoundForward /></span>
+          <p
+            onClick={() => {
+              navigate("/articles");
+            }}
+            className="text-lg leading-8 text-gray-600 text-right hover:cursor-pointer hover:text-primary transition-all duration-500 "
+          >
+            View All{" "}
+            <span className="inline-block">
+              <IoIosArrowRoundForward />
+            </span>
           </p>
         </div>
-        <Publication host="beyondchildhoodinternational.com/article" />
+        <RecentPublication host="beyondchildhoodinternational.com/article" />
       </div>
     </div>
-  )
+  );
 }
 
 export default Blog
