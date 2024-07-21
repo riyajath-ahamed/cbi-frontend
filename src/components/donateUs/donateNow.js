@@ -14,7 +14,7 @@ const DonatePage = () => {
       <div className="w-full flex justify-center mt-20">
         <div className="relative">
           <iframe
-            className="w-[380px] h-[226px] lg:w-[720px] lg:h-[405px] xl:w-[720px] h-[405px]"
+            className="w-[380px] h-[226px] lg:w-[720px] lg:h-[405px] xl:w-[720px] "
             src="https://www.youtube.com/embed/EVkA8WWMCss"
             title="YouTube video"
             frameBorder="0"
