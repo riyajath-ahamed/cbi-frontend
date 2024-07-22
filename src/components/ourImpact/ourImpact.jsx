@@ -17,7 +17,7 @@ const OurImpact = () => {
     <div id='ourimpact'>
         <div className='text-center'>
             <h1 className='text-3xl font-bold'>Our Impact</h1>
-            <p className='text-lg text-gray-600'>
+            <p className='text-lg mt-6  text-gray-600'>
             In 2023, we worked around the world, contributing to help children, fighting poverty, and increasing social justice.
             </p>
         </div>

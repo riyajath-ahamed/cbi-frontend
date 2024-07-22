@@ -1,5 +1,5 @@
 import React from 'react';
-import {AboutUs, BlogHome, ContactUs, DonatePage, Home, NavigationBar, ProjectHome, BlogPost } from './components';
+import {AboutUs, BlogHome, ContactUs, DonatePage, Home, NavigationBar, ProjectHome, BlogPost, Footer } from './components';
 
 import './App.css';
 import { Route, Routes } from 'react-router-dom';
@@ -17,6 +17,7 @@ function App() {
         <Route path="/projects" element={<ProjectHome />} />
         <Route path="/articles/:slug" element={<BlogPost />} />
       </Routes>
+      <Footer />
     </div>
   );
 }
