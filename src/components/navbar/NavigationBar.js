@@ -1,6 +1,7 @@
 import React from 'react';
 import { BrandLogoOriginal } from '../../assets';
 import { NavLink, useNavigate } from 'react-router-dom';
+import { BiSolidDonateHeart } from "react-icons/bi";
 
 const NavigationBar = () => {
   const navigate = useNavigate();
@@ -37,7 +38,7 @@ const NavigationBar = () => {
         </div>
         <NavLink to="/donate" >
           <button className="bg-green-500 border-green-500 text-white border-2 px-8 py-2 ml-5 cursor-pointer rounded-md transition-all duration-200 hover:text-green-700 hover:bg-white hover:border-green-700">
-            Donate
+            Donate <span className='inline-block'><BiSolidDonateHeart /></span> 
           </button>
         </NavLink>
       </div>
