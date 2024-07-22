@@ -55,11 +55,11 @@ const  Whatwedo = () => {
         <div className="mx-auto mt-16 max-w-2xl sm:mt-20 lg:mt-24 lg:max-w-4xl">
           <dl className="grid max-w-xl grid-cols-1 gap-x-8 gap-y-8 lg:max-w-none lg:grid-cols-3 lg:gap-y-16">
             {features.map((feature) => (
-              <div key={feature.name} className=" bg-card-bg rounded-md border-2 border-slate-400 py-5 px-4 flex flex-col justify-between  items-center">
-                <dt className="text-base font-semibold leading-7 text-gray-900">
+              <div key={feature.name} className=" bg-card-bg rounded-md border-2 border-slate-200 py-5 px-4 flex flex-col justify-between  items-center">
+                <dt className="text-base font-medium leading-7 text-gray-900">
                   {feature.name}
                 </dt>
-                <dd className="mt-2 text-sm leading-7 text-center text-gray-600 mb-6">{feature.description}</dd>
+                <dd className="mt-2 text-sm leading-7 text-center text-gray-500 mb-6">{feature.description}</dd>
                 <div className=" text-primary font-medium hover:bg-gray-200 py-2 px-6 rounded-md hover:cursor-pointer  transition-all duration-400">
                     Read More <span className="inline-block"> <FaAngleDown /> </span> 
                 </div>
@@ -68,10 +68,9 @@ const  Whatwedo = () => {
           </dl>
         </div>
         <div className="mt-16 text-center  ">
-            <a href="/what-we-do" className="text-gray-600 font-semibold hover:cursor-pointer  hover:text-green-700 transition-all duration-400">
-            Explore more 
+            <a href="/what-we-do" className="text-gray-600 font-medium hover:cursor-pointer  hover:bg-gray-200 py-4 px-6 rounded-md hover:text-primary transition-all duration-400">
+            Explore More 
             <span className="inline-block"><IoIosArrowRoundForward /></span>
-            
             </a>
         </div>
       </div>

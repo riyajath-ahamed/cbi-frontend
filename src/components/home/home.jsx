@@ -21,7 +21,6 @@ const Home = () => {
       <Blog />
       <Gallery />
       
-      <Footer />
     </div>
   )
 }

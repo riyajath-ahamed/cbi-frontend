@@ -22,7 +22,7 @@ export const RecentPublication = ({ host }) => {
       <dl className="grid max-w-2xl grid-cols-1 gap-x-8 gap-y-8 lg:max-w-none lg:grid-cols-3 lg:gap-y-24">
         {publication.posts.edges.map(({ node }) => (
           <div
-            className="max-w-lg mx-auto bg-white shadow-lg rounded-lg overflow-hidden"
+            className="max-w-lg mx-auto bg-white border-2 border-slate-100 rounded-lg overflow-hidden"
             id={node.id}
           >
             {node.coverImage && (
@@ -35,7 +35,7 @@ export const RecentPublication = ({ host }) => {
             <div className="p-4">
               <div className="text-gray-600 text-sm">{moment(node.publishedAt).format('L')}</div>
               <h2 className="text-xl font-bold mt-2">{node.title}</h2>
-              <p className="text-gray-700 text-base mt-2">{node.brief}</p>
+              <p className="text-gray-500  mt-2">{node.brief}</p>
               <div className="mt-4">
                 <div className="text-gray-500 text-sm flex flex-row justify-between ">
                   <div>By</div>

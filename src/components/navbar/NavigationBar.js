@@ -7,8 +7,8 @@ const NavigationBar = () => {
   const navigate = useNavigate();
   return (
     <div className="sticky top-0 w-full bg-white z-50 shadow-md shadow-green-200/20">
-      <div className="border-b border-gray-300 py-1 my-2 ">
-        <div className="flex justify-end space-x-8 pr-4 sm:mr-5">
+      <div className="border-b border-gray-300 py-1 ">
+        <div className="flex justify-end space-x-8 pr-4 py-2 sm:mr-5">
           <a href="/" className="text-black hover:text-green-500 transition-all duration-400">Home</a>
           <a href="/projects" className="text-black hover:text-green-500 transition-all duration-400">Projects</a>
           <a href="/articles" className="text-black hover:text-green-500 transition-all duration-400">Articles</a>

@@ -41,13 +41,13 @@ const Footer = () => {
   return (
     <footer className="bg-footer-bg text-white" aria-labelledby="footer-heading">
       <h2 id="footer-heading" className="sr-only">Footer</h2>
-      <div className="mx-auto max-w-7xl px-6 pb-8 pt-16 sm:pt-24 lg:px-8 lg:pt-32">
+      <div className="mx-auto max-w-7xl px-6 pb-8 pt-16 sm:pt-24 lg:px-8 lg:pt-20">
         <div className="xl:grid xl:grid-cols-3 xl:gap-8">
           <div>
             <FooterLogo />
             <FooterSocialLinks />
           </div>
-          <div className="mt-16 grid grid-cols-2 md:grid-cols-4 gap-8 xl:col-span-2 xl:mt-0">
+          <div className="mt-8 grid grid-cols-2 md:grid-cols-4 gap-8 xl:col-span-2 xl:mt-0">
             {footerLinks.slice(0, 2).map((section) => (
               <div key={section.title} className="md:grid  md:gap-8">
                 <FooterLinksSection title={section.title} links={section.links} />
@@ -60,8 +60,10 @@ const Footer = () => {
             ))}
           </div>
         </div>
-        <div className="mt-16 border-t border-gray-400 pt-8 sm:mt-11 lg:mt-14">
-          <p className="text-xs leading-5 text-gray-500">&copy; 2024 Beyond Childhood International. All rights reserved.</p>
+        <div className="mt-16 flex flex-row  border-t border-gray-400 pt-8 sm:mt-11 lg:mt-14">
+          <p className="text-sm leading-5 text-gray-400 mr-4 pr-4 border-r-2 border-gray-500">&copy; 2024 Beyond Childhood International. All rights reserved.</p>
+          <p className="text-sm leading-5 text-gray-400 mr-4 pr-4  border-r-2 border-gray-500 hover:cursor-pointer">Terms of Service</p>
+          <p className="text-sm leading-5 text-gray-400 mr-3 hover:cursor-pointer ">Privacy Policy</p>
         </div>
       </div>
     </footer>
@@ -75,8 +77,8 @@ export const FooterLinksSection = ({ title, links }) => (
   //if condition for routes
 
   <div>
-    <h3 className="text-sm font-semibold leading-6 text-green-400">{title}</h3>
-    <ul role="list" className="mt-6 space-y-4">
+    <h3 className="text-lg font-medium  leading-6 text-green-400">{title}</h3>
+    <ul role="list" className="mt-6 space-y-2">
       {links.map((link) => (
         <li key={link.label}>
           <a href={link.href} className="text-sm leading-6 text-white hover:text-green-400">{link.label}</a>
