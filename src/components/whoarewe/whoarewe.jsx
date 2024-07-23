@@ -4,7 +4,7 @@ import { WhoAreWe } from '../../assets'
 
 const Whoarewe = () => {
   return (
-    <div id="whoarewe" className="overflow-hidden bg-white py-10 sm:py-24">
+    <div id="whoarewe" className="overflow-hidden bg-white py-10 sm:py-20">
       <div className="mx-auto max-w-7xl px-6 lg:px-8">
         <div className="text-center mb-6">
         <p className="mt-2 text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">Who are we</p>

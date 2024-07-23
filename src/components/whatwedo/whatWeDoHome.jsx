@@ -1,6 +1,5 @@
 import { FaAngleDown } from "react-icons/fa";
-import { IoIosArrowRoundForward } from "react-icons/io";
-import { NavLink } from 'react-router-dom';
+
 
 const features = [
   {
@@ -39,9 +38,27 @@ const features = [
       'We support mental health with accessible services, counselling, & awareness to enhance emotional resilience and reduce stigma.', 
  
   },
+  {
+    name: 'Assisting vulnerable health',
+    description:
+      'We support the health needs of deprived and impoverished communities, improving healthcare access and overall well-being.',
+
+  },
+  {
+    name: 'Legal Help for Every Child',
+    description:
+      'We offer legal support to vulnerable children, promoting child-friendly justice & addressing their career, psychological, socio-economic needs.',
+
+  },
+  {
+    name: 'Mental Health Support',
+    description:
+      'We support mental health with accessible services, counselling, & awareness to enhance emotional resilience and reduce stigma.', 
+ 
+  },
 ]
 
-const  Whatwedo = () => {
+const  whatWeDoHome = () => {
   return (
     <div id="whatwedo" className="bgcard py-14 sm:py-20">
       <div className="mx-auto max-w-7xl px-6 lg:px-8">
@@ -68,17 +85,9 @@ const  Whatwedo = () => {
             ))}
           </dl>
         </div>
-        <div className="mt-16 text-center  ">
-          <NavLink to="/whatwedo" >
-            <p className="text-gray-600 font-medium hover:cursor-pointer  hover:bg-gray-200 py-4 px-6 rounded-md hover:text-primary transition-all duration-400">
-            Explore More 
-            <span className="inline-block"><IoIosArrowRoundForward /></span>
-            </p>
-            </NavLink>
-        </div>
       </div>
     </div>
   )
 }
 
-export default Whatwedo;
+export default whatWeDoHome;
