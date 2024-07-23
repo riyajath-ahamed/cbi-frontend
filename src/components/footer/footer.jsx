@@ -78,7 +78,7 @@ export const FooterLinksSection = ({ title, links }) => (
 
   <div>
     <h3 className="text-lg font-medium  leading-6 text-green-400">{title}</h3>
-    <ul role="list" className="mt-6 space-y-2">
+    <ul className="mt-6 space-y-2">
       {links.map((link) => (
         <li key={link.label}>
           <a href={link.href} className="text-sm leading-6 text-white hover:text-green-400">{link.label}</a>

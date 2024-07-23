@@ -1,5 +1,5 @@
 import React from 'react'
-import {NavigationBar,  Blog, Footer, Gallery, ImageCarousel, MissionCard, OurImpact, Project, QuotesSlider, Whatwedo, WhereWeWork, Whoarewe } from '../index'
+import {  Blog, Gallery, ImageCarousel, MissionCard, OurImpact, Project, QuotesSlider, Whatwedo, WhereWeWork, Whoarewe } from '../index'
 
 const Home = () => {
   return (
