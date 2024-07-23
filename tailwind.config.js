@@ -11,6 +11,9 @@ module.exports = {
         secondary: '#15803d',
         "card-bg": "#F2F2F2",
         "footer-bg": "#262626",
+      },
+      dropShadow: {
+        'md': '0 4px 6px rgba(0, 0, 0, 0.1)',
       }
     },
   },
