@@ -42,7 +42,7 @@ const features = [
 
 const  Whatwedo = () => {
   return (
-    <div className="bgcard py-24 sm:py-32">
+    <div id="whatwedo" className="bgcard py-14 sm:py-20">
       <div className="mx-auto max-w-7xl px-6 lg:px-8">
         <div className="mx-auto max-w-2xl lg:text-center">
           <p className="mt-2 text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">
@@ -55,23 +55,22 @@ const  Whatwedo = () => {
         <div className="mx-auto mt-16 max-w-2xl sm:mt-20 lg:mt-24 lg:max-w-4xl">
           <dl className="grid max-w-xl grid-cols-1 gap-x-8 gap-y-8 lg:max-w-none lg:grid-cols-3 lg:gap-y-16">
             {features.map((feature) => (
-              <div key={feature.name} className="relative bg-card-bg rounded-md border-2 border-slate-400 py-5 px-4 flex flex-col items-center">
-                <dt className="text-base font-semibold leading-7 text-gray-900">
+              <div key={feature.name} className=" bg-card-bg rounded-md border-2 border-slate-200 py-5 px-4 flex flex-col justify-between  items-center">
+                <dt className="text-base font-medium leading-7 text-gray-900">
                   {feature.name}
                 </dt>
-                <dd className="mt-2 text-sm leading-7 text-center text-gray-600 mb-6">{feature.description}</dd>
-                <div className=" text-primary font-semibold hover:cursor-pointer hover:text-green-700 transition-all duration-400">
+                <dd className="mt-2 text-sm leading-7 text-center text-gray-500 mb-6">{feature.description}</dd>
+                <div className=" text-primary font-medium hover:bg-gray-200 py-2 px-6 rounded-md hover:cursor-pointer  transition-all duration-400">
                     Read More <span className="inline-block"> <FaAngleDown /> </span> 
                 </div>
               </div>
             ))}
           </dl>
         </div>
-        <div className="mt-16 text-center ">
-            <a href="/what-we-do" className="text-gray-600 font-semibold hover:cursor-pointer hover:text-green-700 transition-all duration-400">
-            Explore more 
+        <div className="mt-16 text-center  ">
+            <a href="/what-we-do" className="text-gray-600 font-medium hover:cursor-pointer  hover:bg-gray-200 py-4 px-6 rounded-md hover:text-primary transition-all duration-400">
+            Explore More 
             <span className="inline-block"><IoIosArrowRoundForward /></span>
-            
             </a>
         </div>
       </div>
