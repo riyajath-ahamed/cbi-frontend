@@ -47,9 +47,9 @@ export const RecentPublication = ({ host }) => {
                 </div>
               </div>
               <NavLink to={`/articles/${node.slug}` }>
-              <a className="block mt-4 text-green-500 hover:text-green-700 font-medium cursor-pointer">
+              <p className="block mt-4 text-green-500 hover:text-green-700 font-medium cursor-pointer">
                 Read Article
-              </a>
+              </p>
               </NavLink>
             </div>
           </div>
@@ -110,9 +110,9 @@ export const AllPublication = ({ host , setArticlesCount }) => {
                 </div>
               </div>
               <NavLink to={`/articles/${node.slug}` }>
-              <a className="block mt-4 text-green-500 hover:text-green-700 font-medium cursor-pointer">
+              <p className="block mt-4 text-green-500 hover:text-green-700 font-medium cursor-pointer">
                 Read Article
-              </a>
+              </p>
               </NavLink>
             </div>
           </div>
