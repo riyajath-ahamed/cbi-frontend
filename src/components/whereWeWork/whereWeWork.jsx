@@ -1,5 +1,5 @@
-import React, { useEffect, useRef } from 'react';
-import createGlobe from 'cobe';
+import React  from 'react';
+// import createGlobe from 'cobe';
 
 const WhereWeWork = () => {
   // const canvasRef = useRef();
