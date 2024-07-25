@@ -11,7 +11,7 @@ const NavigationBar = () => {
         <div className="flex justify-end space-x-8 pr-4 py-2 sm:mr-5">
           <div
             onClick={() => {
-              navigate("/*");
+              navigate("/");
             }}
             className="text-black hover:text-green-500 transition-all duration-400 hover:cursor-pointer"
           >
