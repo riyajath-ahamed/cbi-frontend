@@ -32,7 +32,7 @@ const Whoarewe = () => {
             </div>
             <div className=" mt-6 md:pl-16 lg:mt-10  text-center">
 
-              <button className="bg-white hover:bg-green-600 text-green-600 border-2 border-green-600 font-bold py-2 px-4 hover:text-white flex items-center cursor-pointer rounded-md transition-all duration-200">
+              <button className="bg-white hover:bg-green-600 text-green-600 border-2 border-green-600 font-medium py-2 px-4 hover:text-white flex items-center cursor-pointer rounded-md transition-all duration-200">
                 Explore More
                 <svg className="ml-2 w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 5l7 7-7 7"></path>
