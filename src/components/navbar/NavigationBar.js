@@ -11,9 +11,9 @@ const NavigationBar = () => {
         <div className="flex justify-end space-x-8 pr-4 py-2 sm:mr-5">
           <div
             onClick={() => {
-              navigate("/*");
+              navigate("/");
             }}
-            className="text-black hover:text-green-500 transition-all duration-400"
+            className="text-black hover:text-green-500 transition-all duration-400 hover:cursor-pointer"
           >
             Home
           </div>
@@ -21,7 +21,7 @@ const NavigationBar = () => {
             onClick={() => {
               navigate("/projects");
             }}
-            className="text-black hover:text-green-500 transition-all duration-400"
+            className="text-black hover:text-green-500 transition-all duration-400 hover:cursor-pointer"
           >
             Projects
           </div>
@@ -29,7 +29,7 @@ const NavigationBar = () => {
             onClick={() => {
               navigate("/articles");
             }}
-            className="text-black hover:text-green-500 transition-all duration-400"
+            className="text-black hover:text-green-500 transition-all duration-400 hover:cursor-pointer"
           >
             Articles
           </div>
@@ -37,7 +37,7 @@ const NavigationBar = () => {
             onClick={() => {
               navigate("/about");
             }}
-            className="text-black hover:text-green-500 transition-all duration-400"
+            className="text-black hover:text-green-500 transition-all duration-400 hover:cursor-pointer"
           >
             About Us
           </div>
@@ -45,7 +45,7 @@ const NavigationBar = () => {
             onClick={() => {
               navigate("/contact");
             }}
-            className="text-black hover:text-green-500 transition-all duration-400"
+            className="text-black hover:text-green-500 transition-all duration-400 hover:cursor-pointer"
           >
             Contact
           </div>
