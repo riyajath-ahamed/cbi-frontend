@@ -1,0 +1,34 @@
+
+.slider {
+    position: relative;
+    width: 1920px;
+    height: 625px;
+    overflow: hidden;
+  }
+  
+  .slider img {
+    position: absolute;
+    top: 0;
+    width: 1920px;
+    height: 625px;
+    object-fit: cover;
+    transition: transform 300ms ease-in-out;
+  }
+  
+  .slider-image {
+    left: 0;
+    transform: translateX(0);
+  }
+  
+  .next-image {
+    transform: translateX(100%);
+  }
+  
+  .slide-out {
+    transform: translateX(-100%);
+  }
+  
+  .slide-in {
+    transform: translateX(0);
+  }
+  
