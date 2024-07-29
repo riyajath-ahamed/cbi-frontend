@@ -1,4 +1,6 @@
+import React, { useState } from "react";
 import { FaAngleDown } from "react-icons/fa";
+import Whatwedomodal from "./whatwedomodal";
 
 
 const features = [
@@ -58,7 +60,18 @@ const features = [
   },
 ]
 
-const  whatWeDoHome = () => {
+const  WhatWeDoHome = () => {
+
+  const [selectedFeature, setSelectedFeature] = useState(null);
+
+  const handleReadMoreClick = (feature) => {
+    setSelectedFeature(feature);
+  };
+
+  const closeModal = () => {
+    setSelectedFeature(null);
+  };
+  
   return (
     <div id="whatwedo" className="bgcard py-14 sm:py-20">
       <div className="mx-auto max-w-7xl px-6 lg:px-8">
@@ -78,7 +91,9 @@ const  whatWeDoHome = () => {
                   {feature.name}
                 </dt>
                 <dd className="mt-2 text-sm leading-7 text-center text-gray-500 mb-6">{feature.description}</dd>
-                <div className=" text-primary font-medium hover:bg-gray-200 py-2 px-6 rounded-md hover:cursor-pointer  transition-all duration-400">
+                <div className=" text-primary font-medium hover:bg-gray-200 py-2 px-6 rounded-md hover:cursor-pointer  transition-all duration-400"
+                  onClick={() => handleReadMoreClick(feature)}
+                >
                     Read More <span className="inline-block"> <FaAngleDown /> </span> 
                 </div>
               </div>
@@ -86,8 +101,9 @@ const  whatWeDoHome = () => {
           </dl>
         </div>
       </div>
+      {selectedFeature && <Whatwedomodal feature={selectedFeature} closeModal={closeModal} />}
     </div>
   )
 }
 
-export default whatWeDoHome;
+export default WhatWeDoHome;
