@@ -1,23 +1,27 @@
-import logo from './logo.svg';
+import React from 'react';
+import {AboutUs, BlogHome, ContactUs, DonatePage, Home, NavigationBar, ProjectHome, BlogPost, Footer, WhatWeDoHome, PageNotFound } from './components';
+
 import './App.css';
+import { Route, Routes } from 'react-router-dom';
+import { ScrollToTop } from './components/common';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className="relative">
+      <ScrollToTop />
+      <NavigationBar />
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/about" element={<AboutUs />} />
+        <Route path="/contact" element={<ContactUs />} />
+        <Route path="/donate" element={<DonatePage />} />
+        <Route path="/articles" element={<BlogHome />} />
+        <Route path="/projects" element={<ProjectHome />} />
+        <Route path="/articles/:slug" element={<BlogPost />} />
+        <Route path="/whatwedo" element={<WhatWeDoHome />} />
+        <Route path="*" element={<PageNotFound />}/>
+      </Routes>
+      <Footer />
     </div>
   );
 }
