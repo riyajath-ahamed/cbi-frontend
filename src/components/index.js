@@ -7,6 +7,7 @@ export {default as Home} from './home/home.jsx';
 export {default as BlogHome} from './blog/home.jsx';
 export {default as ProjectHome} from './projects/ProjectHome/projectHome.jsx';
 export {default as WhatWeDoHome} from './whatwedo/whatWeDoHome.jsx';
+export {default as PageNotFound} from './404page/PageNotFound.jsx';
 
 export {default as NavigationBar} from './navbar/NavigationBar.js';
 export {default as Whatwedo} from './whatwedo/whatwedo.jsx';
