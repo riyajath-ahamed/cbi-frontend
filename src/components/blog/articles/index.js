@@ -57,7 +57,6 @@ export const AllPublication = ({ host , setArticlesCount }) => {
   useEffect(() => {
     if (data) {
       const { publication } = data;
-      console.log("53656353534 ijijo",publication);
       setArticlesCount(publication.posts.totalDocuments);
     }
   }, [data, setArticlesCount]);
