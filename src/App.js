@@ -1,5 +1,5 @@
 import React from 'react';
-import {AboutUs, BlogHome, ContactUs, DonatePage, Home, NavigationBar, ProjectHome, BlogPost, Footer, WhatWeDoHome } from './components';
+import {AboutUs, BlogHome, ContactUs, DonatePage, Home, NavigationBar, ProjectHome, BlogPost, Footer, WhatWeDoHome, PageNotFound } from './components';
 
 import './App.css';
 import { Route, Routes } from 'react-router-dom';
@@ -11,7 +11,7 @@ function App() {
       <ScrollToTop />
       <NavigationBar />
       <Routes>
-        <Route path="/*" element={<Home />} />
+        <Route path="/" element={<Home />} />
         <Route path="/about" element={<AboutUs />} />
         <Route path="/contact" element={<ContactUs />} />
         <Route path="/donate" element={<DonatePage />} />
@@ -19,6 +19,7 @@ function App() {
         <Route path="/projects" element={<ProjectHome />} />
         <Route path="/articles/:slug" element={<BlogPost />} />
         <Route path="/whatwedo" element={<WhatWeDoHome />} />
+        <Route path="*" element={<PageNotFound />}/>
       </Routes>
       <Footer />
     </div>
