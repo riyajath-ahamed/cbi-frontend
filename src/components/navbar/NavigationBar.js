@@ -147,25 +147,25 @@ const NavigationBar = () => {
       </div>
 
       {isMenuOpen && (
-        <div className="md:hidden bg-white border-t border-gray-200 shadow-md">
-          <div className="flex flex-col items-start py-2 px-4 space-y-2">
-            <div onClick={() => navigate("/")} className="w-full text-black hover:text-green-500 transition-all duration-400 hover:cursor-pointer">
+        <div className="md:hidden bg-cardOverlay fixed border-t w-full rounded-b-lg backdrop-blur-xl border-gray-200 shadow-md">
+          <div className="flex flex-col items-start py-2 px-4 space-y-5">
+            <div onClick={() => {navigate("/"); setIsMenuOpen(!isMenuOpen); }} className="w-full text-black hover:text-green-500 transition-all duration-400 hover:cursor-pointer">
               Home
             </div>
-            <div onClick={() => navigate("/projects")} className="w-full text-black hover:text-green-500 transition-all duration-400 hover:cursor-pointer">
+            <div onClick={() => {navigate("/projects"); setIsMenuOpen(!isMenuOpen);}} className="w-full text-black hover:text-green-500 transition-all duration-400 hover:cursor-pointer">
               Projects
             </div>
-            <div onClick={() => navigate("/articles")} className="w-full text-black hover:text-green-500 transition-all duration-400 hover:cursor-pointer">
+            <div onClick={() => {navigate("/articles"); setIsMenuOpen(!isMenuOpen);}} className="w-full text-black hover:text-green-500 transition-all duration-400 hover:cursor-pointer">
               Articles
             </div>
-            <div onClick={() => navigate("/about")} className="w-full text-black hover:text-green-500 transition-all duration-400 hover:cursor-pointer">
+            <div onClick={() => {navigate("/about"); setIsMenuOpen(!isMenuOpen);}} className="w-full text-black hover:text-green-500 transition-all duration-400 hover:cursor-pointer">
               About Us
             </div>
-            <div onClick={() => navigate("/contact")} className="w-full text-black hover:text-green-500 transition-all duration-400 hover:cursor-pointer">
+            <div onClick={() => {navigate("/contact"); setIsMenuOpen(!isMenuOpen);}} className="w-full text-black hover:text-green-500 transition-all duration-400 hover:cursor-pointer">
               Contact
             </div>
             <hr className="w-full border-gray-200" />
-            <div>
+            <div onClick={() => setIsMenuOpen(!isMenuOpen)}>
               <a
                 href="#whoarewe"
                 className="w-full text-black hover:text-green-500 transition-all duration-400 hover:cursor-pointer block"
@@ -173,7 +173,7 @@ const NavigationBar = () => {
                 Who We Are
               </a>
             </div>
-            <div>
+            <div onClick={() => setIsMenuOpen(!isMenuOpen)}>
               <a
                 href="#wherewework"
                 className="w-full text-black hover:text-green-500 transition-all duration-400 hover:cursor-pointer block"
@@ -181,7 +181,7 @@ const NavigationBar = () => {
                 Where We Work
               </a>
             </div>
-            <div>
+            <div onClick={() => setIsMenuOpen(!isMenuOpen)}>
               <a
                 href="#whatwedo"
                 className="w-full text-black hover:text-green-500 transition-all duration-400 hover:cursor-pointer block"
@@ -189,7 +189,7 @@ const NavigationBar = () => {
                 What We Do
               </a>
             </div>
-            <div>
+            <div className='' onClick={() => setIsMenuOpen(!isMenuOpen)}>
               <a
                 href="#ourimpact"
                 className="w-full text-black hover:text-green-500 transition-all duration-400 hover:cursor-pointer block"
