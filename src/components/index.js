@@ -26,3 +26,6 @@ export {default as AboutUs} from './aboutUsPage/AboutUsPage.js';
 export {default as ContactUs} from './contactUs/contactUs.js';
 
 export {default as BlogPost} from './blog/post.jsx';
+
+// dashboard Uploades
+export {default as DashboardHome} from './Dashboard/dashboardHome.jsx';

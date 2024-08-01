@@ -11,16 +11,16 @@ const Whatwedomodal = ({ feature, closeModal }) => {
           <div class="w-full text-center">
             <div class="m-8 my-20 max-w-[400px] mx-auto">
               <div class="mb-8">
-                <h1 class="mb-4 text-xl font-semibold">
+                <h1 class="mb-2 text-xl font-medium">
                 {feature.name}
                 </h1>
-                <hr class="w-20 mx-auto my-1 border-2 border-primary" />
-                <p class="text-gray-600 text-base ">
+                <hr class="w-20 mx-auto my-1 border-1 border-primary" />
+                <p class="text-gray-500 text-base my-3 ">
                 {feature.description}
                 </p>
               </div>
               <div class="space-y-4">
-                <button class=" text-primary font-medium hover:bg-gray-200 py-2 px-6 rounded-md hover:cursor-pointer  transition-all duration-400"
+                <button class=" text-primary hover:text-green-700 font-medium hover:bg-gray-200 py-2 px-6 rounded-md hover:cursor-pointer  transition-all duration-400"
                     onClick={closeModal}
                 >
                   Close
