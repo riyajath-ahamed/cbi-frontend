@@ -1,5 +1,8 @@
 import React from 'react';
-import {AboutUs, BlogHome, ContactUs, DonatePage, Home, NavigationBar, ProjectHome, BlogPost, Footer, WhatWeDoHome, PageNotFound, DashboardHome } from './components';
+import {AboutUs, BlogHome, ContactUs, DonatePage, Home, NavigationBar, ProjectHome, BlogPost, Footer, WhatWeDoHome,
+   PageNotFound,
+    // DashboardHome 
+  } from './components';
 
 import './App.css';
 import { Route, Routes } from 'react-router-dom';
@@ -21,7 +24,7 @@ function App() {
         <Route path="/whatwedo" element={<WhatWeDoHome />} />
         <Route path="/*" element={<PageNotFound />}/>
         <Route path="/404" element={<PageNotFound />}/>
-        <Route path="dashboard" element={<DashboardHome />}/>
+        {/* <Route path="dashboard" element={<DashboardHome />}/> */}
       </Routes>
       <Footer />
     </div>
