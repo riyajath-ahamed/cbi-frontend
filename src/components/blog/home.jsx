@@ -13,10 +13,8 @@ const BlogHome = () => {
           <p className="mt-6 text-lg leading-8 text-primary">
            {articlesCount} Articles are Available
           </p>
-          <p onClick=""  className="text-lg leading-8 text-gray-600 text-right hover:cursor-pointer">
-          </p>
         </div>
-        <AllPublication host="beyondchildhoodinternational.com/article" setArticlesCount={setArticlesCount} />
+        <AllPublication host="beyondchildhoodinternational.com/article" setArticlesCount={setArticlesCount} slug="articles" />
       </div>
     </div>
   )
