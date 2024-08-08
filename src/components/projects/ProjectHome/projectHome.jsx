@@ -14,7 +14,7 @@ const ProjectHome = () => {
           {articlesCount} Successful Stories
           </p>
         </div>
-        <AllPublication host="beyondchildhoodinternational.com/article" setArticlesCount={setArticlesCount} slug="projects" />
+        <AllPublication host="beyondchildhoodinternational.com/article" setArticlesCount={setArticlesCount} slug="projects" panel="projects" />
       </div>
     </div>
   );
