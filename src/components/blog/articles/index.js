@@ -6,7 +6,6 @@ import { NavLink } from 'react-router-dom';
 import { BlogWait, CardWait } from '../../common';
 
 export const RecentPublication = ({ host , slug }) => {
-  console.log((GET_RECENT_POST(slug)))
   const { loading, error, data } = useQuery(GET_RECENT_POST({slug}), {
     variables: { host },
   });
@@ -50,7 +49,7 @@ export const RecentPublication = ({ host , slug }) => {
 };
 
 
-export const AllPublication = ({ host , setArticlesCount, slug }) => {
+export const AllPublication = ({ host , setArticlesCount, slug , panel }) => {
   const { loading, error, data } = useQuery(GET_ALL_POST({slug}), {
     variables: { host },
   });
@@ -65,9 +64,7 @@ export const AllPublication = ({ host , setArticlesCount, slug }) => {
   if (loading) return (<CardWait/>);
   if (error) return <p>Error: {error.message}</p>;
 
-
   const { publication } = data;
-  console.log(publication);
 
   return (
     <div className="mx-auto mt-12 max-w-2xl sm:mt-16 lg:mt-16 lg:max-w-6xl">
@@ -98,7 +95,7 @@ export const AllPublication = ({ host , setArticlesCount, slug }) => {
                   <div className="font-medium">English</div>
                 </div>
               </div>
-              <NavLink to={`/articles/${node.slug}` }>
+              <NavLink to={`/${panel}/${node.slug}` }>
               <p className="block mt-4 text-green-500 hover:text-green-700 font-medium cursor-pointer">
                 Read Article
               </p>
@@ -112,12 +109,10 @@ export const AllPublication = ({ host , setArticlesCount, slug }) => {
 };
 
 
-export const SinglePost = ({ host , slug }) => {
+export const SinglePost = ({ host , slug , panel }) => {
   const { loading, error, data } = useQuery(GET_SINGLE_POST, {
     variables: { host, slug },
   });
-
-  console.log("666626266151  - - - --",slug)
 
   if (loading) return (<BlogWait/>);
   if (error) return <p>Error: {error.message}</p>;
@@ -127,7 +122,6 @@ export const SinglePost = ({ host , slug }) => {
   //handle the syling of the html content 
 
   const { publication } = data;
-  console.log(publication);
 
   return (
     <div>
