@@ -5,8 +5,8 @@ import moment from 'moment/moment';
 import { NavLink } from 'react-router-dom';
 import { BlogWait, CardWait } from '../../common';
 
-export const RecentPublication = ({ host }) => {
-  const { loading, error, data } = useQuery(GET_RECENT_POST, {
+export const RecentPublication = ({ host , slug }) => {
+  const { loading, error, data } = useQuery(GET_RECENT_POST({slug}), {
     variables: { host },
   });
 
@@ -19,7 +19,7 @@ export const RecentPublication = ({ host }) => {
   return (
     <div className="mx-auto mt-12 max-w-2xl sm:mt-16 lg:mt-16 lg:max-w-6xl">
       <dl className="grid max-w-2xl grid-cols-1 gap-x-8 gap-y-8 lg:max-w-none lg:grid-cols-3 lg:gap-y-24">
-        {publication.posts.edges.map(({ node }) => (
+        {publication.series.posts.edges.map(({ node }) => (
           <div
             className="max-w-lg mx-auto bg-white border-2 border-slate-100 rounded-lg overflow-hidden"
             id={node.id}
@@ -49,28 +49,27 @@ export const RecentPublication = ({ host }) => {
 };
 
 
-export const AllPublication = ({ host , setArticlesCount }) => {
-  const { loading, error, data } = useQuery(GET_ALL_POST, {
+export const AllPublication = ({ host , setArticlesCount, slug , panel }) => {
+  const { loading, error, data } = useQuery(GET_ALL_POST({slug}), {
     variables: { host },
   });
 
   useEffect(() => {
     if (data) {
       const { publication } = data;
-      setArticlesCount(publication.posts.totalDocuments);
+      setArticlesCount(publication.series.posts.totalDocuments);
     }
   }, [data, setArticlesCount]);
 
   if (loading) return (<CardWait/>);
   if (error) return <p>Error: {error.message}</p>;
 
-
   const { publication } = data;
 
   return (
     <div className="mx-auto mt-12 max-w-2xl sm:mt-16 lg:mt-16 lg:max-w-6xl">
       <dl className="grid max-w-2xl grid-cols-1 gap-x-8 gap-y-8 lg:max-w-none lg:grid-cols-3 lg:gap-y-24">
-        {publication.posts.edges.map(({ node }) => (
+        {publication.series.posts.edges.map(({ node }) => (
           <div
             className="max-w-lg lg:min-w-80 mx-auto bg-white shadow-lg rounded-lg overflow-hidden"
             id={node.id}
@@ -96,7 +95,7 @@ export const AllPublication = ({ host , setArticlesCount }) => {
                   <div className="font-medium">English</div>
                 </div>
               </div>
-              <NavLink to={`/articles/${node.slug}` }>
+              <NavLink to={`/${panel}/${node.slug}` }>
               <p className="block mt-4 text-green-500 hover:text-green-700 font-medium cursor-pointer">
                 Read Article
               </p>
@@ -110,12 +109,10 @@ export const AllPublication = ({ host , setArticlesCount }) => {
 };
 
 
-export const SinglePost = ({ host , slug }) => {
+export const SinglePost = ({ host , slug , panel }) => {
   const { loading, error, data } = useQuery(GET_SINGLE_POST, {
     variables: { host, slug },
   });
-
-  console.log("666626266151  - - - --",slug)
 
   if (loading) return (<BlogWait/>);
   if (error) return <p>Error: {error.message}</p>;
@@ -125,7 +122,6 @@ export const SinglePost = ({ host , slug }) => {
   //handle the syling of the html content 
 
   const { publication } = data;
-  console.log(publication);
 
   return (
     <div>
