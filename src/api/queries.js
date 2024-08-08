@@ -1,38 +1,36 @@
 import { gql } from '@apollo/client';
 
 // Recently published posts 3
-export const GET_RECENT_POST = gql`
+export const GET_RECENT_POST = ({ slug }) => gql`
   query Publication($host: String) {
     publication(host: $host) {
       id
       url
-      posts(first: 3) {
-        edges {
-          node {
-            id
-            title
-            slug
-            brief
-            publishedAt
-            coverImage {
-              url
-              attribution
+      series(slug: "${slug}") {
+        posts(first: 3) {
+          edges {
+            node {
+              id
+              title
+              slug
+              brief
+              publishedAt
+              coverImage {
+                url
+                attribution
+              }
             }
           }
+          totalDocuments
         }
-        totalDocuments
       }
     }
   }
 `;
 
-export const GET_ALL_POST = gql`
-  query Publication(
-  $host: String
-) {
-  publication(
-    host: $host
-  ) {
+export const GET_ALL_POST = ({ slug }) => gql`
+  query Publication($host: String) {
+  publication(host: $host) {
     id
     title
     displayTitle
@@ -45,24 +43,26 @@ export const GET_ALL_POST = gql`
       username
       name
     }
-    posts(first:0) {
-      edges {
-        node {
-          id
-          title
-          slug
-          url
-          brief 
-          publishedAt
-          coverImage{
+    series(slug: "${slug}") {
+      posts(first: 20) {
+        edges {
+          node {
+            id
+            title
+            slug
             url
-            attribution
+            brief
+            publishedAt
+            coverImage {
+              url
+              attribution
+            }
           }
         }
+        totalDocuments
       }
-      totalDocuments
     }
-  } 
+  }
 }
 `;
 
