@@ -1,6 +1,7 @@
 import React from 'react';
 import {AboutUs, BlogHome, ContactUs, DonatePage, Home, NavigationBar, ProjectHome, BlogPost, Footer, WhatWeDoHome,
    PageNotFound,
+   ProjectPost,
     // DashboardHome 
   } from './components';
 
@@ -21,6 +22,7 @@ function App() {
         <Route path="/articles" element={<BlogHome />} />
         <Route path="/projects" element={<ProjectHome />} />
         <Route path="/articles/:slug" element={<BlogPost />} />
+        <Route path="/projects/:slug" element={<ProjectPost />} />
         <Route path="/whatwedo" element={<WhatWeDoHome />} />
         <Route path="/*" element={<PageNotFound />}/>
         <Route path="/404" element={<PageNotFound />}/>
