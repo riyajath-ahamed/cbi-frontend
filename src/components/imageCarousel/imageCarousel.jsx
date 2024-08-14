@@ -21,7 +21,7 @@ const ImageCarousel = () => {
         dynamicHeight={true}
       >
         <div>
-          <img src={HeroImage1} alt="Hero-image" />
+          <img src={HeroImage1} alt="Hero-image" loading="lazy" />
           <p className="legend hover:cursor-pointer underline-offset-2">
             #helpChildren
           </p>
@@ -30,7 +30,7 @@ const ImageCarousel = () => {
           </p>
         </div>
         <div>
-          <img src={HeroImage2} alt="Hero-image" />
+          <img src={HeroImage2} alt="Hero-image" loading="lazy" />
           <p className="legend hover:cursor-pointer underline-offset-2">
             #socialJustice
           </p>
@@ -39,7 +39,7 @@ const ImageCarousel = () => {
           </p>
         </div>
         <div>
-          <img src={HeroImage3} alt="Hero-image" />
+          <img src={HeroImage3} alt="Hero-image" loading="lazy" />
           <p className="legend hover:cursor-pointer underline-offset-2">
             #forGreateFuture
           </p>
