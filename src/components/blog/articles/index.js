@@ -85,7 +85,7 @@ export const AllPublication = ({ host , setArticlesCount, slug , panel }) => {
               <div className="text-gray-600 text-sm">{moment(node.publishedAt).format('L')}</div>
               <h2 className="text-xl font-bold mt-2">{node.title}</h2>
               <p className="text-gray-700 text-base mt-2">{node.brief}</p>
-              <div className="mt-4">
+              {/* <div className="mt-4">
                 <div className="text-gray-500 text-sm flex flex-row justify-between ">
                   <div>By</div>
                   <div className="font-medium">WDoo</div>
@@ -94,7 +94,7 @@ export const AllPublication = ({ host , setArticlesCount, slug , panel }) => {
                   <div>Language</div>
                   <div className="font-medium">English</div>
                 </div>
-              </div>
+              </div> */}
               <NavLink to={`/${panel}/${node.slug}` }>
               <p className="block mt-4 text-green-500 hover:text-green-700 font-medium cursor-pointer">
                 Read Article
