@@ -2,14 +2,7 @@ import React from "react";
 import { useNavigate } from "react-router-dom";
 import { MdArrowBack } from "react-icons/md";
 import { imagesIds } from "../../constants/images";
-
-const GalleryImage = ({ src, alt, colSpan, maxHeight }) => (
-  <div
-    className={`overflow-hidden rounded-xl col-span-${colSpan} max-h-[${maxHeight}] relative`}
-  >
-    <img className="h-full w-full object-cover" src={src} alt={alt} />
-  </div>
-);
+import { GalleryImage } from "./galleryFunction";
 
 const GalleryHome = () => {
   const navigate = useNavigate();
