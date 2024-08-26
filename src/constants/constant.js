@@ -2,7 +2,8 @@ export const teamMember = [
     {
         "name": "John Doe",
         "position": "CEO",
-        "imageUrl": "https://placehold.co/180x180"
+        "imageUrl": "https://placehold.co/180x180",
+        //Linked in links to be add
     },
     {
         "name": "Jane Smith",
