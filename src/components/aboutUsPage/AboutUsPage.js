@@ -8,12 +8,15 @@ const teamData = {
     { name: "Tithira De Silva", position: "CEO", imageUrl: tithiraImage },
     { name: "Tithira De Silva", position: "CEO", imageUrl: tithiraImage },
     { name: "Tithira De Silva", position: "CEO", imageUrl: tithiraImage },
+    { name: "Tithira De Silva", position: "CEO", imageUrl: tithiraImage },
+    { name: "Tithira De Silva", position: "CEO", imageUrl: tithiraImage },
   ],
   managers: [
     { name: "Tithira De Silva", position: "CEO", imageUrl: tithiraImage },
     { name: "Tithira De Silva", position: "CEO", imageUrl: tithiraImage },
   ],
   advisors: [
+    { name: "Tithira De Silva", position: "CEO", imageUrl: tithiraImage },
     { name: "Tithira De Silva", position: "CEO", imageUrl: tithiraImage },
     { name: "Tithira De Silva", position: "CEO", imageUrl: tithiraImage },
     { name: "Tithira De Silva", position: "CEO", imageUrl: tithiraImage },
@@ -38,22 +41,25 @@ const AboutUsPage = () => {
   const renderTeam = (title, members) => {
     return (
         <div className="mb-16">
-            <h3 className="text-2xl font-semibold text-center mb-20 mt-10">{title}</h3> {/* Adjusted margin-bottom */}
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
-                {members.map((member, index) => (
-                    <div key={index} className="text-center">
-                        <img
-                            src={member.imageUrl}
-                            alt={member.name}
-                            className="w-28 h-28 rounded-full mx-auto mb-4 border-2 border-gray-200"
-                        />
-                        <p className="font-medium text-lg">{member.name}</p>
-                        <p className="text-sm text-gray-500">{member.position}</p>
-                    </div>
-                ))}
-            </div>
+          <h3 className="text-2xl font-medium text-center mb-20">{title}</h3>
+          <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-6 gap-y-20 mb-20 justify-center mx-auto place-items-center">
+            {members.map((member, index) => (
+              <div
+                key={index}
+                className="text-center flex flex-col items-center justify-center transition-transform transform hover:scale-125"
+              >
+                <img
+                  src={member.imageUrl}
+                  alt={member.name}
+                  className="w-36 h-36 rounded-full mb-4 border-2 border-gray-200"
+                />
+                <p className="font-medium text-lg">{member.name}</p>
+                <p className="text-sm text-gray-500">{member.position}</p>
+              </div>
+            ))}
+          </div>
         </div>
-    );
+    );                      
 };
 
 
@@ -88,7 +94,7 @@ const AboutUsPage = () => {
       {/* Meet the Team Section */}
       <section className="py-12">
         <div className="max-w-7xl mx-auto px-4">
-          <h2 className="text-3xl font-bold text-center mb-6">Meet the Team</h2>
+          <h2 className="text-3xl font-bold text-center mb-4">Meet the Team</h2>
           <p className="text-center text-lg text-gray-600 leading-loose mb-12">
             We've got an entire team dedicated to supporting you through the projects.
           </p>
