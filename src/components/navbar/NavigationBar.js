@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { BrandLogoOriginal} from '../../assets';
+import { BrandLogoOriginal } from '../../assets';
 import { NavLink, useNavigate } from 'react-router-dom';
 import { BiSolidDonateHeart } from "react-icons/bi";
 import { IoMenu } from "react-icons/io5";
@@ -15,55 +15,52 @@ const NavigationBar = () => {
 
   return (
     <div className="sticky top-0 w-full bg-white z-50 shadow-md shadow-green-200/20">
+      {/* Desktop Navigation */}
       <div className="hidden md:block border-b border-gray-300 py-1 ">
         <div className="flex justify-end space-x-8 pr-4 py-2 sm:mr-5">
           <div
-            onClick={() => {
-              navigate("/");
-            }}
+            onClick={() => navigate("/")}
             className="text-black hover:text-green-500 transition-all duration-400 hover:cursor-pointer"
           >
             Home
           </div>
           <div
-            onClick={() => {
-              navigate("/projects");
-            }}
+            onClick={() => navigate("/projects")}
             className="text-black hover:text-green-500 transition-all duration-400 hover:cursor-pointer"
           >
             Projects
           </div>
           <div
-            onClick={() => {
-              navigate("/articles");
-            }}
+            onClick={() => navigate("/articles")}
             className="text-black hover:text-green-500 transition-all duration-400 hover:cursor-pointer"
           >
             Articles
           </div>
           <div
-            onClick={() => {
-              navigate("/about");
-            }}
+            onClick={() => navigate("/disabilities")}
+            className="text-black hover:text-green-500 transition-all duration-400 hover:cursor-pointer"
+          >
+            Disabilities
+          </div>
+          <div
+            onClick={() => navigate("/about")}
             className="text-black hover:text-green-500 transition-all duration-400 hover:cursor-pointer"
           >
             About Us
           </div>
           <div
-            onClick={() => {
-              navigate("/contact");
-            }}
+            onClick={() => navigate("/contact")}
             className="text-black hover:text-green-500 transition-all duration-400 hover:cursor-pointer"
           >
             Contact
           </div>
         </div>
       </div>
-      <div className="hidden md:flex justify-between  items-center pl-5 pr-9 py-2">
+
+      {/* Main Section */}
+      <div className="hidden md:flex justify-between items-center px-6 py-3">
         <div
-          onClick={() => {
-            navigate("/");
-          }}
+          onClick={() => navigate("/")}
           className="logo"
         >
           <img
@@ -72,41 +69,38 @@ const NavigationBar = () => {
             className="h-9 md:h-12 w-auto hover:cursor-pointer"
           />
         </div>
-        <div className="flex items-center">
-          <div className="ml-7">
-            <a
-              href="#whoarewe"
-              className="text-gray-800 no-underline hover:text-green-500 transition-all duration-400 pr-5 border-r-2 "
-            >
-              Who We Are
-            </a>
+        {/* Navigation Links and Donate Button */}
+
+        <NavLink to="/donate" className="flex items-center">
+          <div className="flex items-center justify-end">
+            {/* Navigation Links */}
+            <div className="flex items-center space-x-7">
+              <a
+                href="#whoarewe"
+                className="text-gray-800 no-underline hover:text-green-500 transition-all duration-400 pr-5 border-r-2"
+              >
+                Who We Are
+              </a>
+              <a
+                href="#wherewework"
+                className="text-gray-800 no-underline hover:text-green-500 transition-all duration-400 pr-5 border-r-2"
+              >
+                Where We Work
+              </a>
+              <a
+                href="#whatwedo"
+                className="text-gray-800 no-underline hover:text-green-500 transition-all duration-400 pr-5 border-r-2"
+              >
+                What We Do
+              </a>
+              <a
+                href="#ourimpact"
+                className="text-gray-800 no-underline hover:text-green-500 transition-all duration-400"
+              >
+                Our Impacts
+              </a>
+            </div>
           </div>
-          <div className="ml-7">
-            <a
-              href="#wherewework"
-              className="text-gray-800 no-underline hover:text-green-500 transition-all duration-400 pr-5 border-r-2 "
-            >
-              Where We Work
-            </a>
-          </div>
-          <div className="ml-7">
-            <a
-              href="#whatwedo"
-              className="text-gray-800 no-underline hover:text-green-500 transition-all duration-400 pr-5 border-r-2 "
-            >
-              What We Do
-            </a>
-          </div>
-          <div className="ml-7">
-            <a
-              href="#ourimpact"
-              className="text-gray-800 no-underline hover:text-green-500 transition-all duration-400  "
-            >
-              What We Do
-            </a>
-          </div>
-        </div>
-        <NavLink to="/donate">
           <button className="bg-green-500 border-green-500 text-white border-2 px-8 py-2 ml-5 cursor-pointer rounded-md transition-all duration-200 hover:text-green-700 hover:bg-white hover:border-green-700">
             Donate
             <span className="inline-block text-lg">
@@ -115,12 +109,10 @@ const NavigationBar = () => {
           </button>
         </NavLink>
       </div>
-
+      {/* Mobile Navigation */}
       <div className="flex md:hidden py-2 px-1 justify-between">
         <div
-          onClick={() => {
-            navigate("/");
-          }}
+          onClick={() => navigate("/")}
           className="logo"
         >
           <img
@@ -138,7 +130,8 @@ const NavigationBar = () => {
               </span>
             </button>
           </NavLink>
-          <div className="text-slate-500 m-2 hover:bg-slate-200  rounded-md"
+          <div
+            className="text-slate-500 m-2 hover:bg-slate-200 rounded-md"
             onClick={toggleMenu}
           >
             <IoMenu className="text-3xl" />
@@ -146,26 +139,66 @@ const NavigationBar = () => {
         </div>
       </div>
 
+      {/* Mobile Menu */}
       {isMenuOpen && (
         <div className="md:hidden bg-cardOverlay fixed border-t w-full rounded-b-lg backdrop-blur-xl border-gray-200 shadow-md">
           <div className="flex flex-col items-start py-2 px-4 space-y-5">
-            <div onClick={() => {navigate("/"); setIsMenuOpen(!isMenuOpen); }} className="w-full text-black hover:text-green-500 transition-all duration-400 hover:cursor-pointer">
+            <div
+              onClick={() => {
+                navigate("/");
+                setIsMenuOpen(false);
+              }}
+              className="w-full text-black hover:text-green-500 transition-all duration-400 hover:cursor-pointer"
+            >
               Home
             </div>
-            <div onClick={() => {navigate("/projects"); setIsMenuOpen(!isMenuOpen);}} className="w-full text-black hover:text-green-500 transition-all duration-400 hover:cursor-pointer">
+            <div
+              onClick={() => {
+                navigate("/projects");
+                setIsMenuOpen(false);
+              }}
+              className="w-full text-black hover:text-green-500 transition-all duration-400 hover:cursor-pointer"
+            >
               Projects
             </div>
-            <div onClick={() => {navigate("/articles"); setIsMenuOpen(!isMenuOpen);}} className="w-full text-black hover:text-green-500 transition-all duration-400 hover:cursor-pointer">
+            <div
+              onClick={() => {
+                navigate("/articles");
+                setIsMenuOpen(false);
+              }}
+              className="w-full text-black hover:text-green-500 transition-all duration-400 hover:cursor-pointer"
+            >
               Articles
             </div>
-            <div onClick={() => {navigate("/about"); setIsMenuOpen(!isMenuOpen);}} className="w-full text-black hover:text-green-500 transition-all duration-400 hover:cursor-pointer">
+            <div
+              onClick={() => {
+                navigate("/disabilities");
+                setIsMenuOpen(false);
+              }}
+              className="w-full text-black hover:text-green-500 transition-all duration-400 hover:cursor-pointer"
+            >
+              Disabilities
+            </div>
+            <div
+              onClick={() => {
+                navigate("/about");
+                setIsMenuOpen(false);
+              }}
+              className="w-full text-black hover:text-green-500 transition-all duration-400 hover:cursor-pointer"
+            >
               About Us
             </div>
-            <div onClick={() => {navigate("/contact"); setIsMenuOpen(!isMenuOpen);}} className="w-full text-black hover:text-green-500 transition-all duration-400 hover:cursor-pointer">
+            <div
+              onClick={() => {
+                navigate("/contact");
+                setIsMenuOpen(false);
+              }}
+              className="w-full text-black hover:text-green-500 transition-all duration-400 hover:cursor-pointer"
+            >
               Contact
             </div>
             <hr className="w-full border-gray-200" />
-            <div onClick={() => setIsMenuOpen(!isMenuOpen)}>
+            <div onClick={() => setIsMenuOpen(false)}>
               <a
                 href="#whoarewe"
                 className="w-full text-black hover:text-green-500 transition-all duration-400 hover:cursor-pointer block"
@@ -173,7 +206,7 @@ const NavigationBar = () => {
                 Who We Are
               </a>
             </div>
-            <div onClick={() => setIsMenuOpen(!isMenuOpen)}>
+            <div onClick={() => setIsMenuOpen(false)}>
               <a
                 href="#wherewework"
                 className="w-full text-black hover:text-green-500 transition-all duration-400 hover:cursor-pointer block"
@@ -181,7 +214,7 @@ const NavigationBar = () => {
                 Where We Work
               </a>
             </div>
-            <div onClick={() => setIsMenuOpen(!isMenuOpen)}>
+            <div onClick={() => setIsMenuOpen(false)}>
               <a
                 href="#whatwedo"
                 className="w-full text-black hover:text-green-500 transition-all duration-400 hover:cursor-pointer block"
@@ -189,7 +222,7 @@ const NavigationBar = () => {
                 What We Do
               </a>
             </div>
-            <div className='' onClick={() => setIsMenuOpen(!isMenuOpen)}>
+            <div onClick={() => setIsMenuOpen(false)}>
               <a
                 href="#ourimpact"
                 className="w-full text-black hover:text-green-500 transition-all duration-400 hover:cursor-pointer block"
@@ -200,7 +233,6 @@ const NavigationBar = () => {
           </div>
         </div>
       )}
-
     </div>
   );
 };
