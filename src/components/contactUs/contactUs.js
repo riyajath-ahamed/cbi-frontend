@@ -1,13 +1,119 @@
-import React from 'react';
-import { FaLocationDot } from "react-icons/fa6";
+import axios from 'axios';
+import React, { useState } from 'react';
 import { FaPhoneAlt } from "react-icons/fa";
+import { FaLocationDot } from "react-icons/fa6";
 import { MdEmail } from "react-icons/md";
 
-import './contactUs.css';
+// Reusable component for contact details
+const ContactDetail = ({ Icon, title, details }) => (
+  <div>
+    <Icon className="mx-auto mb-4 bg-primary p-5 rounded-full text-white w-24 h-24 transform transition-transform duration-300 hover:scale-110" />
+    <h2 className="font-medium mb-2.5 text-2xl">{title}</h2>
+    {details.map((detail, index) => (
+      <div key={index} className="mb-6">
+        <p className="text-lg text-[#363636]">{detail.label}</p>
+        <p className="text-gray-600 text-sm">{detail.value}</p>
+      </div>
+    ))}
+  </div>
+);
+
+// Reusable component for social media links
+const SocialMediaLink = ({ href, iconClass, label }) => (
+  <a href={href} target="_blank" rel="noopener noreferrer" aria-label={label}>
+    <i className={`${iconClass} text-[#2BC581] transform transition-transform duration-300 hover:scale-110`}></i>
+  </a>
+);
+
+// Component for the contact form
+const ContactForm = () => {
+  const scriptUrl = "https://script.google.com/macros/library/d/1pJzDfIEY7tuwLaPnd7UbczfBUjfM61bkzURb7gMiJWxaA8aRrIz7y5PM/2";
+  const [loading, setLoading] = useState(false);
+
+  const [name, setName] = useState("");
+  const [email, setEmail] = useState("");
+  const [description, setDescription] = useState("");
+
+  const handleSubmit = (e) => {
+
+    setLoading(true);
+
+    const formData  = {
+      name : name,
+      email : email,
+      description : description
+    }
+    console.log(formData)
+
+
+    axios.post(scriptUrl,formData, {
+      mode: 'no-cors',
+      headers: {
+        Accept: "application/json",
+        "Access-Control-Allow-Origin": "*",
+        'Content-Type': 'application/json'
+      },
+      credentials: 'same-origin',
+      
+    }).then(({data}) => {
+      console.log(data);
+        console.log("SUCCESSFULLY SUBMITTED");
+        setLoading(false);
+        // Optionally reset the form after submission
+        setName("");
+        setEmail("");
+        setDescription("");
+      })
+      .catch(err => {
+        console.log(err);
+        setLoading(false);
+      });
+  };
+
+  return (
+    <div className="max-w-md mx-auto space-y-4" >
+      <input
+        type="text"
+        value={name}
+        onChange={(e) => setName(e.target.value)}
+        placeholder="Enter Name"
+        className="w-full px-4 py-2 border border-gray-300 rounded-md focus:border-[#2BC581] focus:outline-none focus:ring-1 focus:ring-[#2BC581]"
+        aria-label="Name"
+      />
+      <input
+        type="email"
+        value={email}
+        onChange={(e) => setEmail(e.target.value)}
+        placeholder="Enter Email"
+        className="w-full px-4 py-2 border border-gray-300 rounded-md focus:border-[#2BC581] focus:outline-none focus:ring-1 focus:ring-[#2BC581]"
+        aria-label="Email"
+      />
+      <textarea
+        value={description}
+        onChange={(e) => setDescription(e.target.value)}
+        placeholder="Description"
+        className="w-full px-4 py-2 border border-gray-300 rounded-md h-52 focus:border-[#2BC581] focus:outline-none focus:ring-1 focus:ring-[#2BC581]"
+        aria-label="Description"
+      ></textarea>
+      <button
+        type="submit"
+        className="bg-green-500 border-green-500 text-white border-2 px-8 py-1 ml-3 cursor-pointer rounded-md transition-all duration-200 hover:text-green-700 hover:bg-white hover:border-green-700"
+        onClick={ () => handleSubmit()}
+      >
+        {loading && (
+          <div className="inline-block mr-2">
+            <div className="rounded-full h-2 w-2 bg-green-800 animate-ping"></div>
+          </div>
+        )}
+        Send
+      </button>
+    </div>
+  );
+};
 
 const ContactUs = () => {
   return (
-    <div className="p-8 mt-[50px]">
+    <div className="p-8 mt-12">
       <h1 className="text-4xl font-semibold text-center mb-3">Get In Touch</h1>
       <h4 className="text-center text-gray-600 mb-[100px] text-[18px]">
         Reach out to us for any inquiries, support, or feedback.
