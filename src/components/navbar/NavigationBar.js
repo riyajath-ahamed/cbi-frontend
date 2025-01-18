@@ -37,12 +37,6 @@ const NavigationBar = () => {
             Articles
           </div>
           <div
-            onClick={() => navigate("/disabilities")}
-            className="text-black hover:text-green-500 transition-all duration-400 hover:cursor-pointer"
-          >
-            Disabilities
-          </div>
-          <div
             onClick={() => navigate("/about")}
             className="text-black hover:text-green-500 transition-all duration-400 hover:cursor-pointer"
           >
@@ -169,15 +163,6 @@ const NavigationBar = () => {
               className="w-full text-black hover:text-green-500 transition-all duration-400 hover:cursor-pointer"
             >
               Articles
-            </div>
-            <div
-              onClick={() => {
-                navigate("/disabilities");
-                setIsMenuOpen(false);
-              }}
-              className="w-full text-black hover:text-green-500 transition-all duration-400 hover:cursor-pointer"
-            >
-              Disabilities
             </div>
             <div
               onClick={() => {
