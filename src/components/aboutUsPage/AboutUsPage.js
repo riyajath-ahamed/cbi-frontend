@@ -1,17 +1,72 @@
-import React from 'react';
-import { teamMember } from '../../constants/constant';
+import React from "react";
+import { teamMember } from "../../constants/constant"; // Assuming this is needed elsewhere
+import tithiraImage from "../../assets/image_tithira.png"; // Adjust the relative path based on the file location.
 
-const TeamMember = ({ name, position, imageUrl }) => (
-    <div className="background text-center transition-transform transform hover:scale-105">
-        <img className="w-45 h-45 rounded-full mx-auto" src={imageUrl} alt={`${name} - ${position}`} />
-        <p className="mt-4 text-lg">{name}</p>
-        <p className="text-gray-500 mb-[20px]">{position}</p>
-    </div>
-);
 
-const AboutUs = () => {
+const teamData = {
+    directors: [
+        { name: "Tithira De Silva", position: "CEO", imageUrl: tithiraImage },
+        { name: "Tithira De Silva", position: "CEO", imageUrl: tithiraImage },
+        { name: "Tithira De Silva", position: "CEO", imageUrl: tithiraImage },
+        { name: "Tithira De Silva", position: "CEO", imageUrl: tithiraImage },
+        { name: "Tithira De Silva", position: "CEO", imageUrl: tithiraImage },
+    ],
+    managers: [
+        { name: "Tithira De Silva", position: "CEO", imageUrl: tithiraImage },
+        { name: "Tithira De Silva", position: "CEO", imageUrl: tithiraImage },
+    ],
+    advisors: [
+        { name: "Tithira De Silva", position: "CEO", imageUrl: tithiraImage },
+        { name: "Tithira De Silva", position: "CEO", imageUrl: tithiraImage },
+        { name: "Tithira De Silva", position: "CEO", imageUrl: tithiraImage },
+        { name: "Tithira De Silva", position: "CEO", imageUrl: tithiraImage },
+        // Add the rest of the advisors...
+    ],
+    sriLankaProjectTeam: [
+        { name: "Tithira De Silva", position: "CEO", imageUrl: tithiraImage },
+        { name: "Tithira De Silva", position: "CEO", imageUrl: tithiraImage },
+        { name: "Tithira De Silva", position: "CEO", imageUrl: tithiraImage },
+        { name: "Tithira De Silva", position: "CEO", imageUrl: tithiraImage },
+        { name: "Tithira De Silva", position: "CEO", imageUrl: tithiraImage },
+    ],
+    members: [
+        { name: "Tithira De Silva", position: "CEO", imageUrl: tithiraImage },
+        { name: "Tithira De Silva", position: "CEO", imageUrl: tithiraImage },
+        // Add the rest of the members...
+    ],
+};
+
+const AboutUsPage = () => {
+    // Define the renderTeam function
+    const renderTeam = (title, members) => {
+        return (
+            <div className="mb-16">
+                <h3 className="text-2xl font-medium text-center mb-20 mt-20">{title}</h3>
+                <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-6 gap-y-20 mt-30 justify-center">
+                    {members.map((member, index) => (
+                        <div
+                            key={index}
+                            className="text-center flex flex-col items-center justify-center transition-transform transform hover:scale-125"
+                        >
+                            <img
+                                src={member.imageUrl}
+                                alt={member.name}
+                                className="w-36 h-36 rounded-full mb-4 border-2 border-gray-200"
+                            />
+                            <p className="font-medium text-lg">{member.name}</p>
+                            <p className="text-sm text-gray-500">{member.position}</p>
+                        </div>
+                    ))}
+                </div>
+
+            </div>
+        );
+    };
+
+
     return (
         <div className="bg-white text-gray-900">
+            {/* About Us Section */}
             <section className="py-12">
                 <div className="max-w-7xl mx-auto lg:px-24 px-8">
                     <h1 className="text-4xl font-bold text-center mb-2">About Us</h1>
@@ -37,26 +92,22 @@ const AboutUs = () => {
                 </div>
             </section>
 
-            <section className="py-12">
+            {/* Meet the Team Section */}
+            <section className="py-12 mb-20">
                 <div className="max-w-7xl mx-auto px-4">
-                    <h2 className="text-3xl font-bold text-center mb-2">Meet the Team</h2>
-                    <p className="text-center text-lg text-gray-600 leading-loose">
+                    <h2 className="text-3xl font-bold text-center mb-4">Meet the Team</h2>
+                    <p className="text-center text-lg text-gray-600 leading-loose mb-12">
                         We've got an entire team dedicated to supporting you through the projects.
                     </p>
-                    <div className="mt-14 grid grid-cols-2 md:grid-cols-4 gap-10">
-                        {teamMember.map((member, index) => (
-                            <TeamMember
-                                key={index}
-                                name={member.name}
-                                position={member.position}
-                                imageUrl={member.imageUrl}
-                            />
-                        ))}
-                    </div>
+                    {renderTeam("Directors", teamData.directors)}
+                    {renderTeam("Managers", teamData.managers)}
+                    {renderTeam("Advisors", teamData.advisors)}
+                    {renderTeam("Sri Lanka Project Team", teamData.sriLankaProjectTeam)}
+                    {renderTeam("Members", teamData.members)}
                 </div>
             </section>
         </div>
     );
 };
 
-export default AboutUs;
+export default AboutUsPage;
