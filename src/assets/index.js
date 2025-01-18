@@ -8,3 +8,4 @@ export {default as WhoAreWe} from './whoarewe.png';
 export {default as Quotes1} from './Quotes1.png';
 export {default as Quotes2} from './Quotes2.png';
 export {default as Quotes3} from './Quotes3.png';
+export {default as image_tithira} from './image_tithira.png';
