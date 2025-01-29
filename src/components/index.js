@@ -29,5 +29,8 @@ export {default as BlogPost} from './blog/post.jsx';
 export {default as ProjectPost} from './projects/ProjectHome/ProjectPost.jsx';
 export {default as GalleryHome} from './gallery/galleryHome.jsx';
 
+export { default as ProjectsPageMain } from './Projectss/projects_page_main';
+
+
 // dashboard Uploades
 export {default as DashboardHome} from './Dashboard/dashboardHome.jsx';
