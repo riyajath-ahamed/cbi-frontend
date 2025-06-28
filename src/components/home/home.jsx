@@ -4,7 +4,7 @@ import { ScrollToTopButton } from '../common'
 
 const Home = () => {
   return (
-    <div className=''>
+    <div className='px-2 md:px-0'>
       <ImageCarousel  />
       <Whoarewe />
       <ScrollToTopButton />
