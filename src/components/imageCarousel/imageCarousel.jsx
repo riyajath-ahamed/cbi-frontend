@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import { HeroImage1, HeroImage2, HeroImage3 } from '../../assets'
 import { Carousel } from 'react-responsive-carousel'
 import { PiMouseScrollLight } from "react-icons/pi";
@@ -9,8 +9,18 @@ import "./imageCarousel.css";
 
 
 const ImageCarousel = () => {
+
+   const [isMobile, setIsMobile] = useState(false);
+
+  useEffect(() => {
+    const checkMobile = () => setIsMobile(window.innerWidth <= 768);
+    checkMobile(); // Initial check
+    window.addEventListener('resize', checkMobile);
+    return () => window.removeEventListener('resize', checkMobile);
+  }, []);
+
   return (
-    <div>
+    <div className="rounded-3xl overflow-hidden relative">
       <Carousel
         autoPlay={true}
         infiniteLoop={true}
@@ -18,49 +28,45 @@ const ImageCarousel = () => {
         //showIndicators={false}  -> if needed set as true
         showThumbs={false}
         showArrows={false}
-        dynamicHeight={true}
+        swipeable={!isMobile}         
+        emulateTouch={!isMobile} 
+        
       >
         <div>
           <img src={HeroImage1} alt="Hero-image" loading="lazy" />
           <p className="legend hover:cursor-pointer underline-offset-2">
             #helpChildren
           </p>
-          <p className="readmore  hover:cursor-pointer underline-offset-2">
-            Read More
-          </p>
+          {readMoreButton()}
         </div>
         <div>
           <img src={HeroImage2} alt="Hero-image" loading="lazy" />
           <p className="legend hover:cursor-pointer underline-offset-2">
             #socialJustice
           </p>
-          <p className="readmore hover:cursor-pointer underline-offset-2">
-            Read More
-          </p>
+          {readMoreButton()}
         </div>
         <div>
           <img src={HeroImage3} alt="Hero-image" loading="lazy" />
           <p className="legend hover:cursor-pointer underline-offset-2">
             #forGreateFuture
           </p>
-          <p className="readmore hover:cursor-pointer underline-offset-2">
-            Read More
-          </p>
+        {readMoreButton()}
         </div>
       </Carousel>
-      <div className="relative hidden  bottom-20 md:bottom-32  w-full md:flex flex-col justify-center items-center">
-        <button
-          onClick={() => {
-            window.scrollBy(0, window.innerHeight);
-          }}
-          className="bg-transparent text-white text-2xl md:text-5xl rounded-full p-3 shadow-lg "
-        >
-          <PiMouseScrollLight />
-        </button>
-        <p className="text-sm text-white">Scroll Down</p>
-      </div>
     </div>
   );
 }
 
 export default ImageCarousel
+
+const readMoreButton = () => {
+  return (
+    <button
+  className="readmore hover:cursor-pointer w-28 underline-offset-2 bg-white/10"
+  onClick={() => window.scrollBy(0, window.innerHeight)}
+>
+  Read More
+</button>
+  );
+}
