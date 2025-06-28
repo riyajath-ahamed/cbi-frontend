@@ -13,7 +13,7 @@ const Whoarewe = () => {
         </p>  
         </div>
       
-        <div className="mx-auto grid max-w-2xl grid-cols-1 gap-x-8 gap-y-16 sm:gap-y-20 lg:mx-0 lg:max-w-none lg:grid-cols-2 text-justify justify-items-center lg:text-left">
+        <div className="mx-auto grid max-w-2xl grid-cols-1 gap-x-8 gap-y-16 sm:gap-y-20 lg:mx-0 lg:max-w-none lg:grid-cols-2  justify-items-center lg:text-left">
           <div className="lg:pr-8 lg:pt-4">
             <div className="lg:max-w-lg">
               <dl className=" max-w-xl md:pl-16 space-y-8 text-base leading-7 text-gray-600 lg:max-w-none">

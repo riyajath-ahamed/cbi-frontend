@@ -25,6 +25,7 @@ export {default as DonatePage} from './donateUs/donateNow.js';
 export {default as AboutUs} from './aboutUsPage/AboutUsPage.js';
 export {default as ContactUs} from './contactUs/contactUs.js';
 export {default as MapChart} from './worldMap/worldMap.jsx';
+export {default as CountUp} from './CountUp/CountUp.jsx';
 
 export {default as BlogPost} from './blog/post.jsx';
 export {default as ProjectPost} from './projects/ProjectHome/ProjectPost.jsx';
