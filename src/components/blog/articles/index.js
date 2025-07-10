@@ -4,6 +4,7 @@ import { GET_ALL_POST, GET_RECENT_POST, GET_SINGLE_POST } from '../../../api/que
 import moment from 'moment/moment';
 import { NavLink } from 'react-router-dom';
 import { BlogWait, CardWait } from '../../common';
+import parse from 'html-react-parser';
 
 export const RecentPublication = ({ host , slug }) => {
   const { loading, error, data } = useQuery(GET_RECENT_POST({slug}), {
@@ -122,20 +123,42 @@ export const SinglePost = ({ host , slug , panel }) => {
   //handle the syling of the html content 
 
   const { publication } = data;
+  const htmlContent = publication.post.content.html;
 
   return (
-    <div className='flex flex-col w-1/2'>
-      <p className="text-sm">{moment(publication.post.publishedAt).format('L')}</p>
+    <div className="flex flex-col w-full md:w-2/3  lg:w-1/2 mx-auto px-1 bg-white">
       <h1 className="text-3xl font-bold mt-2">{publication.post.title}</h1>
+      <p className="text-sm">
+        {moment(publication.post.publishedAt).format("L")}
+      </p>
       {publication.post.coverImage && (
         <img
-          className="w-full h-48 object-cover"
+          className="w-full object-cover"
           src={publication.post.coverImage.url}
           alt={`BCI ${publication.post.title}`}
         />
       )}
-      <div dangerouslySetInnerHTML={{ __html: publication.post.content.html }} />
-
+      
+      <div className="  max-w-none ">
+        {parse(htmlContent, {
+          replace: (domNode) => {
+            if (domNode.name === "h2") {
+              return (
+                <h2 className="text-2xl font-bold pt-2 pb-1">
+                  {domNode.children[0].data}
+                </h2>
+              );
+            }
+            if (domNode.name === "h3") {
+              return (
+                <h2 className="text-xl font-semibold pt-2 pb-1">
+                  {domNode.children[0].data}
+                </h2>
+              );
+            }
+          },
+        })}
+      </div>
     </div>
   );
 };

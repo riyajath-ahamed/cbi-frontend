@@ -1,5 +1,7 @@
 import React, { useState } from 'react'
 import { AllPublication } from '../../blog/articles';
+import { NavLink } from 'react-router-dom';
+import { IoArrowBackSharp } from 'react-icons/io5';
 
 const ProjectHome = () => {
   const [articlesCount, setArticlesCount] = useState("0")
@@ -14,6 +16,12 @@ const ProjectHome = () => {
           {articlesCount} Successful Stories
           </p>
         </div>
+        <NavLink to="/" className="hover:text-primary p">
+          <div className="inline-block mx-auto mt-12 max-w-2xl sm:mt-16 lg:mt-16 lg:max-w-6xl">
+            <IoArrowBackSharp />
+          </div>{" "}
+          Back
+        </NavLink>
         <AllPublication host="beyondchildhoodinternational.com/article" setArticlesCount={setArticlesCount} slug="projects" panel="projects" />
       </div>
     </div>
