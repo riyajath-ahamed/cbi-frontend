@@ -5,21 +5,23 @@ const MissionCard = () => {
   const [inView, setInView] = useState(false);
 
   useEffect(() => {
-    const observer = new IntersectionObserver(
-      ([entry]) => setInView(entry.isIntersecting),
-      { threshold: 0.5 }
-    );
+  const currentRef = cardRef.current;
 
-    if (cardRef.current) {
-      observer.observe(cardRef.current);
+  const observer = new IntersectionObserver(
+    ([entry]) => setInView(entry.isIntersecting),
+    { threshold: 0.5 }
+  );
+
+  if (currentRef) {
+    observer.observe(currentRef);
+  }
+
+  return () => {
+    if (currentRef) {
+      observer.unobserve(currentRef);
     }
-
-    return () => {
-      if (cardRef.current) {
-        observer.unobserve(cardRef.current);
-      }
-    };
-  }, []);
+  };
+}, []);
 
   return (
     <div className="bg-transparent mx-auto py-12 px-4 sm:px-6 sm:py-24 lg:px-8">

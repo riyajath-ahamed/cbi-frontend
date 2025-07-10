@@ -1,10 +1,19 @@
 import React from 'react';
-import {AboutUs, BlogHome, ContactUs, DonatePage, Home, NavigationBar, ProjectHome, BlogPost, Footer, WhatWeDoHome,
-   PageNotFound,
-   ProjectPost,
-   GalleryHome,
-    // DashboardHome 
-  } from './components';
+import {
+  AboutUs,
+  BlogHome,
+  ContactUs,
+  DonatePage,
+  Home,
+  NavigationBar,
+  BlogPost,
+  Footer,
+  WhatWeDoHome,
+  PageNotFound,
+  ProjectPost,
+  GalleryHome,
+  // DashboardHome
+} from "./components";
 
 import './App.css';
 import { Route, Routes } from 'react-router-dom';
