@@ -1,6 +1,5 @@
 import React from "react";
-import { teamMember } from "../../constants/constant"; // Assuming this is needed elsewhere
-import tithiraImage from "../../assets/image_tithira.png"; // Adjust the relative path based on the file location.
+import tithiraImage from "../../assets/image_tithira.png"; 
 
 
 const teamData = {
