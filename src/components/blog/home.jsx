@@ -1,5 +1,7 @@
 import React, { useState } from 'react'
 import {AllPublication} from './articles'
+import { NavLink } from 'react-router-dom'
+import { IoArrowBackSharp } from 'react-icons/io5'
 
 const BlogHome = () => {
     const [articlesCount, setArticlesCount] = useState("0")
@@ -11,13 +13,24 @@ const BlogHome = () => {
             Articles
           </p>
           <p className="mt-6 text-lg leading-8 text-primary">
-           {articlesCount} Articles are Available
+            {articlesCount} Articles are Available
           </p>
         </div>
-        <AllPublication host="beyondchildhoodinternational.com/article" setArticlesCount={setArticlesCount} slug="articles" panel="articles"/>
+        <NavLink to="/" className="hover:text-primary p">
+          <div className="inline-block mx-auto mt-12 max-w-2xl sm:mt-16 lg:mt-16 lg:max-w-6xl">
+            <IoArrowBackSharp />
+          </div>{" "}
+          Back
+        </NavLink>
+        <AllPublication
+          host="beyondchildhoodinternational.com/article"
+          setArticlesCount={setArticlesCount}
+          slug="articles"
+          panel="articles"
+        />
       </div>
     </div>
-  )
+  );
 }
 
 export default BlogHome

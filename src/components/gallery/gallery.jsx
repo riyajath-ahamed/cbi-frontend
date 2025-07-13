@@ -48,7 +48,7 @@ const Gallery = () => {
           </div>
         </div>
         <div>
-          <div className="grid grid-cols-6 gap-2">
+          <div className="grid grid-cols-5 gap-2">
             {imagesIds.slice(0, displayCount).map((image, index) => (
               <GalleryImage
                 key={image.id}
@@ -66,7 +66,7 @@ const Gallery = () => {
                 colSpan={2}
                 maxHeight="10rem"
                 overlayText={`+ ${remainingImagesCount}`}
-                navigate={navigate} // Passing navigate as a prop
+                navigate={navigate} 
               />
             )}
           </div>

@@ -25,7 +25,7 @@ const MapChart = () => {
                 <Geography
                   key={geo.rsmKey}
                   geography={geo}
-                  fill={isHighlighted ? "#22C55E" : "#c8f7da"}
+                  fill={isHighlighted ? "#248a49" : "#c8f7da"}
                   style={{
                     default: { outline: "none" },
                     hover: { outline: "none" },

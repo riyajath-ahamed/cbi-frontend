@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import { HeroImage1, HeroImage2, HeroImage3 } from '../../assets'
 import { Carousel } from 'react-responsive-carousel'
-import { PiMouseScrollLight } from "react-icons/pi";
 import "./imageCarousel.css";
 
 // TODO :  - Add read more button

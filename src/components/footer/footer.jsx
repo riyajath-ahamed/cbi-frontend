@@ -61,7 +61,7 @@ const Footer = () => {
           </div>
         </div>
         <div className="mt-16 flex flex-row flex-wrap border-t border-gray-400 pt-8 sm:mt-11 lg:mt-14">
-          <p className="text-sm leading-5 text-gray-400 mr-4 pr-4 md:border-r-2 border-gray-500">&copy; 2024 Beyond Childhood International. All rights reserved.</p>
+          <p className="text-sm leading-5 text-gray-400 mr-4 pr-4 md:border-r-2 border-gray-500">&copy; {new Date().getFullYear()}Beyond Childhood International. All rights reserved.</p>
           <p className="text-sm leading-5 text-gray-400 mr-4 pr-4  md:border-r-2 border-gray-500 hover:cursor-pointer">Terms of Service</p>
           <p className="text-sm leading-5 text-gray-400 mr-3 hover:cursor-pointer ">Privacy Policy</p>
         </div>
