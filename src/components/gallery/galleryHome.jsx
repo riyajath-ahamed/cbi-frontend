@@ -2,11 +2,10 @@ import React from "react";
 import { useNavigate } from "react-router-dom";
 import { MdArrowBack } from "react-icons/md";
 import { imagesIds } from "../../constants/images";
-import { GalleryImage } from "./galleryFunction";
+import Masonry from "../Masonry/Masonry";
 
 const GalleryHome = () => {
   const navigate = useNavigate();
-  const displayCount = imagesIds.length;
 
   return (
     <div id="project" className="bgcard py-14 sm:py-20">
@@ -32,17 +31,21 @@ const GalleryHome = () => {
           Back
         </div>
 
-        <div className="grid grid-cols-6 gap-2 ">
-          {imagesIds.slice(0, displayCount).map((image, index) => (
-            <GalleryImage
-              key={image.id}
-              src={`https://drive.google.com/thumbnail?id=${image.id}&sz=w1000`}
-              alt={`Gallery Image ${index + 1}`}
-              colSpan={index < 2 ? 3 : 2} // First two images span 3 columns, next two span 2 columns
-              maxHeight={index < 2 ? "14rem" : "10rem"} // First two images have a max height of 14rem, others 10rem
+        <div className=" relative h-auto">
+          </div>
+            <Masonry
+              items={imagesIds}
+              ease="power3.out"
+              duration={0.6}
+              stagger={0.05}
+              animateFrom="bottom"
+              scaleOnHover={true}
+              hoverScale={0.95}
+              blurToFocus={true}
+              colorShiftOnHover={false}
             />
-          ))}
-        </div>
+
+        
       </div>
     </div>
   );

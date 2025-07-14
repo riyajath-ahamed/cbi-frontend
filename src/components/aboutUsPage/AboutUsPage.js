@@ -11,6 +11,7 @@ import {
   SanjeewaniPriyangika,
   AhmedRiyajath,
 } from "../../assets/boardMembers";
+import { SolarVillageSDGCIC, TowardsResponsive } from "../../assets/associactives";
 
 const teamData = {
   directors: [
@@ -58,7 +59,18 @@ const teamData = {
       position: "Software and Systems Developer",
       imageUrl: AhmedRiyajath,
     },
-    // Add the rest of the members...
+  ],
+  associatedBrands: [
+    {
+      name: "Towards Responsive",
+      position: "",
+      imageUrl: TowardsResponsive,
+    },
+    {
+      name: "Solar Village SDG CIC",
+      position: "",
+      imageUrl: SolarVillageSDGCIC,
+    },
   ],
 };
 
@@ -70,11 +82,11 @@ const AboutUsPage = () => {
         <h3 className="text-3xl font-medium text-center mb-20 mt-20">
           {title}
         </h3>
-        <div className="grid grid-cols-2 justify-items-center content-center sm:grid-cols-3 md:grid-cols-4 gap-6 gap-y-20 mt-30 justify-center">
+        <div className="grid grid-cols-2 justify-items-center items-start content-start sm:grid-cols-3 md:grid-cols-4 gap-6 gap-y-20 mt-30 justify-center">
           {members.map((member, index) => (
             <div
               key={index}
-              className="text-center flex flex-col items-center justify-center "
+              className="text-center flex flex-col  items-center justify-center "
             >
               <img
                 src={member.imageUrl}
@@ -164,6 +176,7 @@ const AboutUsPage = () => {
           </p>
           {renderTeam("Directors", teamData.directors)}
           {renderTeam("Members", teamData.members)}
+          {renderTeam("Our Associated brands", teamData.associatedBrands)}
         </div>
       </section>
     </div>
