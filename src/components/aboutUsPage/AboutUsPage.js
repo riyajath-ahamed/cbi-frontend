@@ -12,7 +12,6 @@ import {
   AhmedRiyajath,
   ChamodayaBandara,
 } from "../../assets/boardMembers";
-import { SolarVillageSDGCIC, TowardsResponsive } from "../../assets/associactives";
 
 const teamData = {
   directors: [
