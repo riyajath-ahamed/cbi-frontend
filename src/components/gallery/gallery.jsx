@@ -3,29 +3,26 @@ import { IoArrowForward } from "react-icons/io5";
 import { useNavigate } from 'react-router-dom';
 import { imagesIds } from '../../constants/images';
 
-const GalleryImage = ({ src, alt, colSpan, maxHeight, overlayText, navigate }) => (
-  <div className={`overflow-hidden rounded-xl col-span-${colSpan} max-h-[${maxHeight}] relative`}>
+const GalleryImage = ({ src, alt, overlayText, onClick }) => (
+  <div
+    className="relative overflow-hidden rounded-lg shadow hover:cursor-pointer"
+    onClick={onClick}
+  >
+    <img src={src} alt={alt} className="h-full w-full object-cover" />
     {overlayText && (
-      <div
-        className="text-white text-xl absolute inset-0 bg-slate-900/80 flex justify-center items-center hover:cursor-pointer"
-        onClick={() => {
-          navigate("/gallery");
-        }}
-      >
+      <div className="absolute inset-0 bg-slate-900/80 flex justify-center items-center text-white text-xl">
         <p className='hover:bg-slate-500/30 p-1 rounded-md'>
           {overlayText} more
         </p>
-        
       </div>
     )}
-    <img className="h-full w-full object-cover" src={src} alt={alt} />
   </div>
 );
 
 const Gallery = () => {
   const navigate = useNavigate();
 
-  const displayCount = 4; // Number of images to display normally
+  const displayCount = 4;
   const remainingImagesCount = imagesIds.length - displayCount;
 
   return (
@@ -37,9 +34,7 @@ const Gallery = () => {
           </p>
           <div
             className="mt-6 mb-4 text-lg leading-8 text-primary hover:cursor-pointer"
-            onClick={() => {
-              navigate("/gallery");
-            }}
+            onClick={() => navigate("/gallery")}
           >
             View Images{" "}
             <span className="inline-block">
@@ -47,29 +42,48 @@ const Gallery = () => {
             </span>
           </div>
         </div>
-        <div>
-          <div className="grid grid-cols-6 gap-2">
-            {imagesIds.slice(0, displayCount).map((image, index) => (
-              <GalleryImage
-                key={image.id}
-                src={`https://drive.google.com/thumbnail?id=${image.id}&sz=w1000`}
-                alt={`Gallery Image ${index + 1}`}
-                colSpan={index < 2 ? 3 : 2} // First two images span 3 columns, next two span 2 columns
-                maxHeight={index < 2 ? "14rem" : "10rem"} // First two images have a max height of 14rem, others 10rem
-                navigate={navigate} // Passing navigate as a prop
-              />
-            ))}
-            {remainingImagesCount > 0 && (
-              <GalleryImage
-              src={`https://drive.google.com/thumbnail?id=${imagesIds[displayCount].id}&sz=w1000`}
-                alt="More Images"
-                colSpan={2}
-                maxHeight="10rem"
-                overlayText={`+ ${remainingImagesCount}`}
-                navigate={navigate} // Passing navigate as a prop
-              />
-            )}
+
+        {/* Replaced layout with bento-style grid */}
+        <div className="mt-10 grid gap-4 sm:mt-16 lg:grid-cols-3 lg:grid-rows-2">
+          <div className="relative lg:row-span-2">
+            <GalleryImage
+              src={imagesIds[0]?.img}
+              alt="Gallery Image 1"
+              onClick={() => navigate("/gallery")}
+            />
           </div>
+          <div className="relative max-lg:row-start-1">
+            <GalleryImage
+              src={imagesIds[1]?.img}
+              alt="Gallery Image 2"
+              onClick={() => navigate("/gallery")}
+            />
+          </div>
+          <div className="relative max-lg:row-start-3 lg:col-start-2 lg:row-start-2">
+            <GalleryImage
+              src={imagesIds[2]?.img}
+              alt="Gallery Image 3"
+              onClick={() => navigate("/gallery")}
+            />
+          </div>
+          <div className="relative lg:row-span-2">
+            <GalleryImage
+              src={imagesIds[3]?.img}
+              alt="Gallery Image 4"
+              onClick={() => navigate("/gallery")}
+            />
+          </div>
+
+          {remainingImagesCount > 0 && imagesIds[4] && (
+            <div className="relative lg:col-start-2 lg:row-start-2">
+              <GalleryImage
+                src={imagesIds[4]?.img}
+                alt="More Images"
+                overlayText={`+ ${remainingImagesCount}`}
+                onClick={() => navigate("/gallery")}
+              />
+            </div>
+          )}
         </div>
       </div>
     </div>

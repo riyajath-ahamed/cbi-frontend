@@ -1,0 +1,10 @@
+export {default as AmalGunarathne} from './AmalGunarathne.png';
+export {default as NadeeGunaratne} from './Nadee.png';
+export {default as DanWijenayake} from './DanWijenayake.png';
+export {default as NisansalaIroshiniJayasena} from './Nisansala.png';
+export {default as SanjeewaniPriyangika} from './Sanjeewani.png';
+export {default as AnuththaraKodikara} from './Anuththara.png';
+export {default as TithiraGathsaraDeSilva} from './Tithira.png';
+export {default as AhmedRiyajath} from './riyajath.jpg';
+export {default as DrLakshinieGunasiri} from './DrLakshinieGunasiri.jpg';
+export {default as ChamodayaBandara} from './ChamodayaBandara.png';

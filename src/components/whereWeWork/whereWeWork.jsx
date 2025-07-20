@@ -11,7 +11,7 @@ const WhereWeWork = () => {
             Where we work
           </p>
           <p className="mt-6 text-lg leading-8 text-gray-600">
-            We’re part of the global World Vision Partnership across 4 countries
+            We’re part of the global World Vision Partnership across 2 countries
           </p>
         </div>
 
