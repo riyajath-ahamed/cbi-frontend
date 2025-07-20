@@ -1,224 +1,129 @@
-import React, { useState } from 'react';
-import { BrandLogoOriginal } from '../../assets';
-import { NavLink, useNavigate } from 'react-router-dom';
+import React, { useState } from "react";
+import { NavLink, useNavigate, useLocation } from "react-router-dom";
 import { BiSolidDonateHeart } from "react-icons/bi";
 import { IoMenu } from "react-icons/io5";
+import { BrandLogoOriginal } from "../../assets";
+
+const mainNavLinks = [
+  { name: "Home", path: "/" },
+  { name: "Projects", path: "/projects" },
+  { name: "Articles", path: "/articles" },
+  { name: "About Us", path: "/about" },
+  { name: "Contact", path: "/contact" },
+];
+
+const anchorLinks = [
+  { name: "Who We Are", href: "#whoarewe" },
+  { name: "Where We Work", href: "#wherewework" },
+  { name: "What We Do", href: "#whatwedo" },
+  { name: "Our Impact", href: "#ourimpact" },
+];
 
 const NavigationBar = () => {
   const navigate = useNavigate();
-
+  const location = useLocation();
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
-  const toggleMenu = () => {
-    setIsMenuOpen(!isMenuOpen);
+  const isHomePage = location.pathname === "/";
+
+  const handleNavigate = (path) => {
+    navigate(path);
+    setIsMenuOpen(false);
   };
 
   return (
-    <div className="sticky top-0 w-full bg-white z-50 shadow-md shadow-green-200/20">
-      {/* Desktop Navigation */}
-      <div className="hidden md:block border-b border-gray-300 py-1 ">
-        <div className="flex justify-end space-x-8 pr-4 py-2 sm:mr-5">
-          <div
-            onClick={() => navigate("/")}
-            className="text-black hover:text-green-500 transition-all duration-400 hover:cursor-pointer"
+    <header className="sticky top-0 z-50 w-full bg-white shadow-md shadow-green-200/20">
+      {/* Top Bar for Main Links (Desktop) */}
+      <div className="hidden md:flex justify-end space-x-8 py-2 border-b border-gray-300 pr-6">
+        {mainNavLinks.map(({ name, path }) => (
+          <button
+            key={name}
+            onClick={() => handleNavigate(path)}
+            className="text-black hover:text-green-500 transition-all duration-300"
           >
-            Home
-          </div>
-          <div
-            onClick={() => navigate("/projects")}
-            className="text-black hover:text-green-500 transition-all duration-400 hover:cursor-pointer"
-          >
-            Projects
-          </div>
-          <div
-            onClick={() => navigate("/articles")}
-            className="text-black hover:text-green-500 transition-all duration-400 hover:cursor-pointer"
-          >
-            Articles
-          </div>
-          <div
-            onClick={() => navigate("/about")}
-            className="text-black hover:text-green-500 transition-all duration-400 hover:cursor-pointer"
-          >
-            About Us
-          </div>
-          <div
-            onClick={() => navigate("/contact")}
-            className="text-black hover:text-green-500 transition-all duration-400 hover:cursor-pointer"
-          >
-            Contact
-          </div>
-        </div>
-      </div>
-
-      {/* Main Section */}
-      <div className="hidden md:flex justify-between items-center px-6 py-3">
-        <div
-          onClick={() => navigate("/")}
-          className="logo"
-        >
-          <img
-            src={BrandLogoOriginal}
-            alt="Logo"
-            className="h-9 md:h-12 w-auto hover:cursor-pointer"
-          />
-        </div>
-        {/* Navigation Links and Donate Button */}
-
-        <NavLink to="/donate" className="flex items-center">
-          <div className="flex items-center justify-end">
-            {/* Navigation Links */}
-            <div className="flex items-center space-x-7">
-              <a
-                href="#whoarewe"
-                className="text-gray-800 no-underline hover:text-green-500 transition-all duration-400 pr-5 border-r-2"
-              >
-                Who We Are
-              </a>
-              <a
-                href="#wherewework"
-                className="text-gray-800 no-underline hover:text-green-500 transition-all duration-400 pr-5 border-r-2"
-              >
-                Where We Work
-              </a>
-              <a
-                href="#whatwedo"
-                className="text-gray-800 no-underline hover:text-green-500 transition-all duration-400 pr-5 border-r-2"
-              >
-                What We Do
-              </a>
-              <a
-                href="#ourimpact"
-                className="text-gray-800 no-underline hover:text-green-500 transition-all duration-400"
-              >
-                Our Impacts
-              </a>
-            </div>
-          </div>
-          <button className="bg-green-500 border-green-500 text-white border-2 px-8 py-2 ml-5 cursor-pointer rounded-md transition-all duration-200 hover:text-green-700 hover:bg-white hover:border-green-700">
-            Donate
-            <span className="inline-block text-lg">
-              <BiSolidDonateHeart />
-            </span>
+            {name}
           </button>
-        </NavLink>
+        ))}
       </div>
-      {/* Mobile Navigation */}
-      <div className="flex md:hidden py-2 px-1 justify-between">
-        <div
-          onClick={() => navigate("/")}
-          className="logo"
-        >
-          <img
-            src={BrandLogoOriginal}
-            alt="Logo"
-            className="h-12 w-auto hover:cursor-pointer"
-          />
+
+      {/* Logo + Anchor Links + Donate (Desktop) */}
+      <div className="hidden md:flex items-center justify-between px-6 py-3">
+        <div onClick={() => navigate("/")} className="cursor-pointer">
+          <img src={BrandLogoOriginal} alt="Logo" className="h-12 w-auto" />
+        </div>
+        <div className="flex items-center space-x-6">
+          {isHomePage &&
+            anchorLinks.map(({ name, href }, i) => (
+              <a
+                key={name}
+                href={href}
+                className={`text-gray-800 hover:text-green-500 transition-all duration-300 ${
+                  i < anchorLinks.length - 1 ? "pr-5 border-r-2" : ""
+                }`}
+              >
+                {name}
+              </a>
+            ))}
+          <NavLink to="/donate">
+            <button className="flex items-center bg-green-500 border-green-500 text-white border-2 px-6 py-2 rounded-md transition hover:text-green-700 hover:bg-white hover:border-green-700">
+              Donate <BiSolidDonateHeart className="ml-2 text-lg" />
+            </button>
+          </NavLink>
+        </div>
+      </div>
+
+      {/* Mobile Header */}
+      <div className="flex md:hidden items-center justify-between py-2 px-3">
+        <div onClick={() => navigate("/")} className="cursor-pointer">
+          <img src={BrandLogoOriginal} alt="Logo" className="h-12 w-auto" />
         </div>
         <div className="flex items-center">
           <NavLink to="/donate">
-            <button className="bg-green-500 border-green-500 text-white border-2 px-5 py-1 ml-3 cursor-pointer rounded-md transition-all duration-200 hover:text-green-700 hover:bg-white hover:border-green-700">
-              Donate{" "}
-              <span className="inline-block">
-                <BiSolidDonateHeart />
-              </span>
+            <button className="bg-green-500 border-green-500 text-white border-2 px-4 py-1 rounded-md transition hover:text-green-700 hover:bg-white hover:border-green-700">
+              Donate <BiSolidDonateHeart className="inline ml-1" />
             </button>
           </NavLink>
-          <div
-            className="text-slate-500 m-2 hover:bg-slate-200 rounded-md"
-            onClick={toggleMenu}
+          <button
+            onClick={() => setIsMenuOpen((prev) => !prev)}
+            className="ml-3 text-slate-600 hover:bg-slate-200 p-2 rounded-md"
           >
             <IoMenu className="text-3xl" />
-          </div>
+          </button>
         </div>
       </div>
 
       {/* Mobile Menu */}
       {isMenuOpen && (
-        <div className="md:hidden bg-cardOverlay fixed border-t w-full rounded-b-lg backdrop-blur-xl border-gray-200 shadow-md">
-          <div className="flex flex-col items-start py-2 px-4 space-y-5">
-            <div
-              onClick={() => {
-                navigate("/");
-                setIsMenuOpen(false);
-              }}
-              className="w-full text-black hover:text-green-500 transition-all duration-400 hover:cursor-pointer"
-            >
-              Home
-            </div>
-            <div
-              onClick={() => {
-                navigate("/projects");
-                setIsMenuOpen(false);
-              }}
-              className="w-full text-black hover:text-green-500 transition-all duration-400 hover:cursor-pointer"
-            >
-              Projects
-            </div>
-            <div
-              onClick={() => {
-                navigate("/articles");
-                setIsMenuOpen(false);
-              }}
-              className="w-full text-black hover:text-green-500 transition-all duration-400 hover:cursor-pointer"
-            >
-              Articles
-            </div>
-            <div
-              onClick={() => {
-                navigate("/about");
-                setIsMenuOpen(false);
-              }}
-              className="w-full text-black hover:text-green-500 transition-all duration-400 hover:cursor-pointer"
-            >
-              About Us
-            </div>
-            <div
-              onClick={() => {
-                navigate("/contact");
-                setIsMenuOpen(false);
-              }}
-              className="w-full text-black hover:text-green-500 transition-all duration-400 hover:cursor-pointer"
-            >
-              Contact
-            </div>
-            <hr className="w-full border-gray-200" />
-            <div onClick={() => setIsMenuOpen(false)}>
-              <a
-                href="#whoarewe"
-                className="w-full text-black hover:text-green-500 transition-all duration-400 hover:cursor-pointer block"
+        <nav className="md:hidden bg-white border-t border-gray-200 shadow-md px-4 py-4 rounded-b-lg backdrop-blur-xl">
+          <div className="space-y-4">
+            {mainNavLinks.map(({ name, path }) => (
+              <div
+                key={name}
+                onClick={() => handleNavigate(path)}
+                className="text-black hover:text-green-500 transition cursor-pointer"
               >
-                Who We Are
-              </a>
-            </div>
-            <div onClick={() => setIsMenuOpen(false)}>
-              <a
-                href="#wherewework"
-                className="w-full text-black hover:text-green-500 transition-all duration-400 hover:cursor-pointer block"
-              >
-                Where We Work
-              </a>
-            </div>
-            <div onClick={() => setIsMenuOpen(false)}>
-              <a
-                href="#whatwedo"
-                className="w-full text-black hover:text-green-500 transition-all duration-400 hover:cursor-pointer block"
-              >
-                What We Do
-              </a>
-            </div>
-            <div onClick={() => setIsMenuOpen(false)}>
-              <a
-                href="#ourimpact"
-                className="w-full text-black hover:text-green-500 transition-all duration-400 hover:cursor-pointer block"
-              >
-                Our Impact
-              </a>
-            </div>
+                {name}
+              </div>
+            ))}
+            {isHomePage && (
+              <>
+                <hr className="border-gray-200" />
+                {anchorLinks.map(({ name, href }) => (
+                  <a
+                    key={name}
+                    href={href}
+                    onClick={() => setIsMenuOpen(false)}
+                    className="block text-black hover:text-green-500 transition"
+                  >
+                    {name}
+                  </a>
+                ))}
+              </>
+            )}
           </div>
-        </div>
+        </nav>
       )}
-    </div>
+    </header>
   );
 };
 
