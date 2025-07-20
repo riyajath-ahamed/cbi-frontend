@@ -10,6 +10,7 @@ import {
   NisansalaIroshiniJayasena,
   SanjeewaniPriyangika,
   AhmedRiyajath,
+  ChamodayaBandara,
 } from "../../assets/boardMembers";
 
 const teamData = {
@@ -26,6 +27,12 @@ const teamData = {
       subtitle: "Based In Sri Lanka",
       imageUrl: NadeeGunaratne,
     },
+    {
+      name: "Chamodaya Bandara",
+      position: "Legal Project Coordinator",
+      imageUrl: ChamodayaBandara,
+    },
+
   ],
   members: [
     {
@@ -58,8 +65,8 @@ const teamData = {
       position: "Software and Systems Developer",
       imageUrl: AhmedRiyajath,
     },
-    // Add the rest of the members...
   ],
+
 };
 
 const AboutUsPage = () => {
@@ -70,11 +77,11 @@ const AboutUsPage = () => {
         <h3 className="text-3xl font-medium text-center mb-20 mt-20">
           {title}
         </h3>
-        <div className="grid grid-cols-2 justify-items-center content-center sm:grid-cols-3 md:grid-cols-4 gap-6 gap-y-20 mt-30 justify-center">
+        <div className="grid grid-cols-2 justify-items-center items-start content-start sm:grid-cols-3 md:grid-cols-4 gap-6 gap-y-20 mt-30 justify-center">
           {members.map((member, index) => (
             <div
               key={index}
-              className="text-center flex flex-col items-center justify-center "
+              className="text-center flex flex-col  items-center justify-center "
             >
               <img
                 src={member.imageUrl}

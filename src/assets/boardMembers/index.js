@@ -7,3 +7,4 @@ export {default as AnuththaraKodikara} from './Anuththara.png';
 export {default as TithiraGathsaraDeSilva} from './Tithira.png';
 export {default as AhmedRiyajath} from './riyajath.jpg';
 export {default as DrLakshinieGunasiri} from './DrLakshinieGunasiri.jpg';
+export {default as ChamodayaBandara} from './ChamodayaBandara.png';

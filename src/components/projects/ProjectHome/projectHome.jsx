@@ -13,7 +13,7 @@ const ProjectHome = () => {
             Project
           </p>
           <p className="mt-6 text-lg leading-8 text-gray-600">
-          {articlesCount} Successful Stories
+            {articlesCount} Successful Stories
           </p>
         </div>
         <NavLink to="/" className="hover:text-primary p">
@@ -22,7 +22,12 @@ const ProjectHome = () => {
           </div>{" "}
           Back
         </NavLink>
-        <AllPublication host="beyondchildhoodinternational.com/article" setArticlesCount={setArticlesCount} slug="projects" panel="projects" />
+        <AllPublication
+          host="beyondchildhoodinternational.com/article"
+          setArticlesCount={setArticlesCount}
+          slug="projects"
+          panel="projects"
+        />
       </div>
     </div>
   );
