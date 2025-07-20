@@ -10,6 +10,7 @@ import {
   NisansalaIroshiniJayasena,
   SanjeewaniPriyangika,
   AhmedRiyajath,
+  ChamodayaBandara,
 } from "../../assets/boardMembers";
 import { SolarVillageSDGCIC, TowardsResponsive } from "../../assets/associactives";
 
@@ -27,6 +28,12 @@ const teamData = {
       subtitle: "Based In Sri Lanka",
       imageUrl: NadeeGunaratne,
     },
+    {
+      name: "Chamodaya Bandara",
+      position: "Legal Project Coordinator",
+      imageUrl: ChamodayaBandara,
+    },
+
   ],
   members: [
     {
@@ -60,18 +67,7 @@ const teamData = {
       imageUrl: AhmedRiyajath,
     },
   ],
-  associatedBrands: [
-    {
-      name: "Towards Responsive",
-      position: "",
-      imageUrl: TowardsResponsive,
-    },
-    {
-      name: "Solar Village SDG CIC",
-      position: "",
-      imageUrl: SolarVillageSDGCIC,
-    },
-  ],
+
 };
 
 const AboutUsPage = () => {
@@ -176,7 +172,6 @@ const AboutUsPage = () => {
           </p>
           {renderTeam("Directors", teamData.directors)}
           {renderTeam("Members", teamData.members)}
-          {renderTeam("Our Associated brands", teamData.associatedBrands)}
         </div>
       </section>
     </div>
