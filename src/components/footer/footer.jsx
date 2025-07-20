@@ -32,8 +32,8 @@ const Footer = () => {
     {
       title: 'Contact Us',
       links: [
-        { label: 'Tel: 011', href: '#' },
-        { label: 'Email: ', href: 'mailto:riyajatha@gmail.com' },
+        // { label: 'Tel: ', href: '#' },
+        { label: 'Email: beyondchildhoodinternational@gmail.com', href: 'mailto:beyondchildhoodinternational@gmail.com' },
       ],
     },
   ];
