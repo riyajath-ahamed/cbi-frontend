@@ -12,13 +12,14 @@ import {
   PageNotFound,
   ProjectPost,
   GalleryHome,
+  ProjectHome,
   // DashboardHome
 } from "./components";
 
 import './App.css';
 import { Route, Routes } from 'react-router-dom';
 import { ScrollToTop } from './components/common';
-import { ProjectsPageMain } from './components';
+//import { ProjectsPageMain } from './components';
 
 
 function App() {
@@ -32,7 +33,7 @@ function App() {
         <Route path="/contact" element={<ContactUs />} />
         <Route path="/donate" element={<DonatePage />} />
         <Route path="/articles" element={<BlogHome />} />
-        <Route path="/projects" element={<ProjectsPageMain />} />
+        <Route path="/projects" element={<ProjectHome/>} />
         <Route path="/articles/:slug" element={<BlogPost />} />
         <Route path="/projects/:slug" element={<ProjectPost />} />
         <Route path="/whatwedo" element={<WhatWeDoHome />} />

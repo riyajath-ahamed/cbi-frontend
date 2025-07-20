@@ -1,5 +1,5 @@
-import axios from 'axios';
-import React, { useState } from 'react';
+// import axios from 'axios';
+import React  from 'react';
 import { FaPhoneAlt } from "react-icons/fa";
 import { FaLocationDot } from "react-icons/fa6";
 import { MdEmail } from "react-icons/md";
@@ -125,8 +125,10 @@ const ContactUs = () => {
           <h2 className="text-xl font-medium mb-[9px] text-[25px]">Address</h2>
           <p className="font-semiboldfont-575757 text-[#363636] text-[19px]">Australia</p>
           <p className="font-medium text-[#8A8A8A] mb-[26px] text-[16px]">
-            Melbourne, Victoria, <br />
+            138 Juliette Street, <br />
+            Greenslopes, QLD 4120, <br />
             Australia.
+            <p><span className='font-semibold'>ABN: </span>35 669 535 442</p>
           </p>
           <p className="font-semiboldfont-575757 text-[#363636] text-[19px]">Sri Lanka</p>
           <p className="font-medium text-[#8A8A8A] text-[16px] mb-[20px]">
@@ -149,12 +151,11 @@ const ContactUs = () => {
         <div>
           <MdEmail className="mx-auto mb-8 bg-primary p-5 rounded-full text-white w-24 h-24 transform transition-transform duration-300 hover:scale-[1.1]" />
           <h2 className="text-xl font-medium mb-[9px] text-[25px]">Email</h2>
-          <p className="font-semiboldfont-575757 text-[#363636] text-[19px]">For Donations</p>
-          <p className="font-medium text-[#8A8A8A] mb-[46px] text-[16px]">sampleemail@gmail.com</p>
+          <p className="font-semiboldfont-575757 text-[#363636] text-[19px]">For Donations and Opportunities</p>
+          <a className="font-medium text-[#8A8A8A] mb-[46px] text-[16px]" href="mailto:beyondchildhoodinternational@gmail.com">beyondchildhoodinternational@gmail.com</a>
           <p className="font-semiboldfont-575757 text-[#363636] text-[19px]">Technical Help</p>
-          <p className="font-medium text-[#8A8A8A] mb-[46px] text-[16px]">sampleemail@gmail.com</p>
-          <p className="font-semiboldfont-575757 text-[#363636] text-[19px]">Opportunities</p>
-          <p className="font-medium text-[#8A8A8A] mb-[46px] text-[16px]">sampleemail@gmail.com</p>
+          <a className="font-medium text-[#8A8A8A] mb-[46px] text-[16px]" href="mailto:beyondchildhooddevelopers@gmail.com">beyondchildhooddevelopers@gmail.com</a>
+
         </div>
       </div>
 

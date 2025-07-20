@@ -39,7 +39,7 @@ const Footer = () => {
   ];
 
   return (
-    <footer className="bg-footer-bg text-white" aria-labelledby="footer-heading">
+    <footer className="relative bg-footer-bg text-white" aria-labelledby="footer-heading">
       <h2 id="footer-heading" className="sr-only">Footer</h2>
       <div className="mx-auto max-w-7xl px-6 pb-8 pt-16 sm:pt-24 lg:px-8 lg:pt-20">
         <div className="xl:grid xl:grid-cols-3 xl:gap-8">
@@ -61,7 +61,7 @@ const Footer = () => {
           </div>
         </div>
         <div className="mt-16 flex flex-row flex-wrap border-t border-gray-400 pt-8 sm:mt-11 lg:mt-14">
-          <p className="text-sm leading-5 text-gray-400 mr-4 pr-4 md:border-r-2 border-gray-500">&copy; 2024 Beyond Childhood International. All rights reserved.</p>
+          <p className="text-sm leading-5 text-gray-400 mr-4 pr-4 md:border-r-2 border-gray-500">&copy; {new Date().getFullYear()}Beyond Childhood International. All rights reserved.</p>
           <p className="text-sm leading-5 text-gray-400 mr-4 pr-4  md:border-r-2 border-gray-500 hover:cursor-pointer">Terms of Service</p>
           <p className="text-sm leading-5 text-gray-400 mr-3 hover:cursor-pointer ">Privacy Policy</p>
         </div>
